@@ -11,9 +11,6 @@ import PublicRoute from "./hoc/PublicRoute";
 import PrivateRoute from "./hoc/PrivateRoute";
 
 
-
-
-
 const App = () => {
   return (
     <div className="App">
