@@ -1,0 +1,36 @@
+.profile_page {
+  height: 100vh;
+  overflow-x: hidden;
+  margin: 0 1% 0 1.7%;
+  overflow-y: auto;
+  .h1_title {
+    text-align: start !important;
+    margin: 1% 4% 0 4%;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 500;
+    color: #003367;
+  }
+  .container {
+    width: 92%;
+    margin: 1% 4% 0 4%;
+  }
+}
+
+.loading_div{
+  margin: 0 auto;
+  padding: 3% 30%;
+  margin: 6% 2%;
+}
+
+@media screen and (max-width: 980px) {
+  .profile_page{
+    margin: 0 3% 0 6.5%;
+    .h1_title{
+      margin: 2% 30% 0 4%;
+    }
+    .container {
+      margin: 1% 2% 0 2%;
+    }
+  }
+}

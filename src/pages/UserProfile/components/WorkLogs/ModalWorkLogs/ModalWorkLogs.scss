@@ -1,0 +1,65 @@
+.modal_div{
+   display: none;
+}
+.time_button_div{
+   display: inline-block;
+   width: 18%;
+   padding: 10px;
+   margin: 2% 39.5%;
+   
+}
+.time_div{
+   display: inline-block;
+   display: flex;
+   justify-content: space-between;
+   height: 70px;
+   padding: 10px 5px;
+   margin: 40px 0 20px 0;
+}
+.save_button{
+   width: 100%;
+   border: none;
+   border-radius: 4px;
+   padding: 7px 20px;
+   margin: 0 auto !important;
+   text-align: center;
+   margin: 2.5% 0 0 30%;
+   color: black;
+   font-weight: 400;
+   font-size: 14px;
+   background-color: #d1e1f0
+}
+h1{
+   text-align: center;
+   margin: 10px 0;
+   color: #003367;
+   font-size: 20px;
+   font-weight: 500;
+   line-height: 32px;
+}
+.close_logo{
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   display: block;
+   width: 24px;
+   height: 24px;
+   margin: 0 auto;
+   padding: 5px;
+   cursor: pointer;
+}
+#modal-modal-description{
+   margin: 20px 0 !important; 
+   height: 150px;  
+}
+.MuiStack-root{
+   display: flex;
+   justify-content: space-between !important;
+}
+.MuiStack-root{
+   padding: 10px !important;
+}
+.MuiInputBase-root{
+   height: 100%;
+}
+
