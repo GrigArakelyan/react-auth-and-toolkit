@@ -9,6 +9,7 @@ import UserProfile from "./pages/UserProfile";
 import { CODE, DASHBOARD, HOME, USER, USER_PROFILE } from "./constants/router";
 import NotRequireAuth from "./hoc/PublicRoute";
 
+
 const App = () => {
   return (
     <div className="App">
