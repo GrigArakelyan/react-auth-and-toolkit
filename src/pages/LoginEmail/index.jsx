@@ -36,7 +36,7 @@ const LoginEmail = () => {
   return (
     <div className="login_page_email">
       <div>
-        <img src={loginimg} className="login_img" />
+        <img src={loginimg} className="login_img" alt="img"/>
       </div>
       <div className="login_email">
         <form className="login_email_item"

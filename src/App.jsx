@@ -7,20 +7,22 @@ import UserPage from "./pages/UserPage";
 import UserLayout from "./layouts/UserLayout";
 import UserProfile from "./pages/UserProfile";
 import { CODE, DASHBOARD, HOME, USER, USER_PROFILE } from "./constants/router";
-import NotRequireAuth from "./hoc/PublicRoute";
+import PublicRoute from "./hoc/PublicRoute";
+import PrivateRoute from "./hoc/PrivateRoute";
+
+
+
 
 
 const App = () => {
   return (
     <div className="App">
       <Routes>
-        <Route path={HOME} element={<NotRequireAuth />}>
-         <Route path={HOME} element={<LoginEmail/>} />
-         <Route path={CODE} element={<LoginCode />} />
-        </Route>
-        <Route path={USER} element={ <UserLayout/> }>
-          <Route path={DASHBOARD} element={ <UserPage />} />
-          <Route path={USER_PROFILE} element={<UserProfile />} />
+         <Route path={HOME} element={<PublicRoute > <LoginEmail/> </PublicRoute>} />
+         <Route path={CODE} element={<PublicRoute > <LoginCode /> </PublicRoute>} />
+          <Route path={USER} element={ <UserLayout/> }>
+            <Route path={DASHBOARD} element={ <UserPage />} />
+            <Route path={USER_PROFILE} element={<UserProfile />} />
         </Route>
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>

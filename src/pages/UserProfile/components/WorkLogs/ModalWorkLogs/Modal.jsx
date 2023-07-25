@@ -14,9 +14,8 @@ import { Controller, useForm } from 'react-hook-form';
 
 
 const ModalWorkLogs = ({openModal, handleOpen, dayId, setOpenModal, addOrRefreshTime, id}) => {
-  const adapter = new AdapterDayjs();
   const dispatch = useDispatch();
-  const {handleSubmit, control, formState: { errors }} = useForm();
+  const {handleSubmit, control } = useForm();
 
   const handleClose = () => {
     setOpenModal(false);

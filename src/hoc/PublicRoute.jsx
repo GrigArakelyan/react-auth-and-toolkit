@@ -2,7 +2,7 @@ import { Navigate } from "react-router";
 import { DASHBOARD } from "../constants/router";
 import useAuth from "../hook/useAuth";
 
-const NotRequireAuth = ({children}) => {
+const PublicRoute = ({children}) => {
 
    const auth = {token: useAuth()}
 
@@ -10,4 +10,4 @@ const NotRequireAuth = ({children}) => {
 
 }
 
-export default NotRequireAuth
+export default PublicRoute
