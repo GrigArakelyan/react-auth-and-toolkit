@@ -73,7 +73,14 @@
   .login_page_email{
     display: block;
     .login_email{
-      margin: 34% auto;
+      margin: 50% auto;
+      padding: 60px 30px;
+      width: 70%;
+    }
+    .login_email_item{
+      .button_email{
+        margin-left: 5%;
+      }
     }
   }
   .login_img{

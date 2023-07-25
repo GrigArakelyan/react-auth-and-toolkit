@@ -172,7 +172,17 @@ input::-webkit-inner-spin-button {
       display: none;
     }
     .login_code-right{
-      margin: 20% auto;
+      width: 90%;
+      margin: 43% auto;
+      .login_code{
+        width: 70%;
+        padding: 60px 20px;
+        margin: 0 auto;
+      }
+      .span{
+        padding: 10px 20px;
+        margin-left: 13% !important;
+      }
     }
   }
 }
