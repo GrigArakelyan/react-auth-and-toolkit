@@ -24,7 +24,23 @@
         font-weight: 500;
         color: #003367;
       }
-
+      .error {
+        display: flex !important;
+        align-items: center;
+        background-color: #deb2b2;
+        border-radius: 4px;
+        margin: 2px 0;
+        padding: 0 5px;
+        .error_logo {
+          width: 20px;
+          height: 20px;
+          padding: 0 10px;
+        }
+        .error_text {
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
       .input_span_email {
         display: flex;
         flex-direction: column;
