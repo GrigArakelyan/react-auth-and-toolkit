@@ -19,7 +19,7 @@ const UserPage = () => {
 
   return (
     <div className="user_page_content">
-      <img src={userPageImg} className="user_page_img" />
+      <img src={userPageImg} className="user_page_img" alt="img"/>
       <h2 className="h2_title">COMING SOON</h2>
       <button className="edit_profile_button" onClick={myProfilePage}>
         EDIT MY PROFILE AND MY WORKLOG

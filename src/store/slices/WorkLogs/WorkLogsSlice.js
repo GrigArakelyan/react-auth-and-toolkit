@@ -14,7 +14,7 @@ const WorkLogsReducer = createSlice({
       state.data = state.data.map((day) => {
         return {...day, workTime: (day.workTime).filter((time) => {
             if(time.id === action.payload.id){
-              return time.id != action.payload.id
+              return time.id !== action.payload.id
             }
             return time
         })}})

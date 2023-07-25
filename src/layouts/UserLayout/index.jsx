@@ -5,14 +5,15 @@ import {ReactComponent as UserProfileLogo} from "../../img/icons/Schedule.svg"
 import { Outlet } from "react-router";
 import { DASHBOARD, USER_PROFILE } from "../../constants/router";
 import { NavLink } from "react-router-dom";
-import RequiredAuth from "../../hoc/PrivateRoute";
+import PrivateRoute from "../../hoc/PrivateRoute";
 
 const UserLayout = () => {
   const classActive = ({isActive}) => isActive ? "active" : "link" 
 
   
   return (
-    <RequiredAuth>
+  <>
+     <PrivateRoute>
       <header className="user_header">
         <div className="header_img_div">
           <MenuLogo className="user_header_icon" />
@@ -25,7 +26,8 @@ const UserLayout = () => {
         </div>
       </header>
       <Outlet />
-    </RequiredAuth >
+     </PrivateRoute >
+    </>
   );
 };
 export default UserLayout;

@@ -16,7 +16,7 @@ const GeneralInfo = () => {
   const {data, error} = useSelector(selectMyProfile);
   const adapter = new AdapterDayjs();
   const dispatch = useDispatch();
-  const {register, control,formState: { errors, isDirty }, handleSubmit} = useForm(
+  const {register, control,formState: { isDirty }, handleSubmit} = useForm(
     {defaultValues: 
       { ...data,
         firstName: data?.firstName,
@@ -39,7 +39,6 @@ const GeneralInfo = () => {
       email: data?.email,
     }
     dispatch(changeGeneralInfo(postData));
-    // console.log(postData, "post User Data");
   }
 
 
@@ -125,7 +124,7 @@ const GeneralInfo = () => {
         <div className="account">
           <span className="account_span">Slack</span>
           <div className="input_icon">
-            <img src={SlackIcon} className="icon" />
+            <img src={SlackIcon} className="icon" alt="img"/>
             <input className="input_account" type="text" placeholder="Enter you slack user name"
             {...register("slackUserName")}/>
           </div>
@@ -133,7 +132,7 @@ const GeneralInfo = () => {
         <div className="account">
           <span className="account_span">Github</span>
           <div className="input_icon">
-            <img src={GitHubIcon} className="icon" />
+            <img src={GitHubIcon} className="icon" alt="img"/>
             <input className="input_account" type="text" placeholder="Enter your github user name" 
             {...register("gitHubUserName")}/>
           </div>

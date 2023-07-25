@@ -49,7 +49,7 @@ const LoginCode = () => {
   return (
       <div className="login_page_code">
         <div>
-          <img src={loginimg} className="code_img" />
+          <img src={loginimg} className="code_img" alt="img"/>
         </div>
         <div className="login_code-right">
           <div className="login_code">

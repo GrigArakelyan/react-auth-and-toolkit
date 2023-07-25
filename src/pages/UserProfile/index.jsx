@@ -16,7 +16,7 @@ const UserProfile = () => {
       .unwrap()
       .then(() => {})
       .catch(() => {});
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="profile_page">
