@@ -18,7 +18,6 @@ const WorkLogsReducer = createSlice({
             }
             return time
         })}})
-        console.log(state.data);
     },
     refreshWorkTime(state, action) {
       state.data = state.data.map((day) => {

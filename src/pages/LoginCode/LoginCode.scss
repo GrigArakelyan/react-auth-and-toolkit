@@ -33,7 +33,7 @@ input::-webkit-inner-spin-button {
           color: #003367;
         }
         .error {
-          display: flex;
+          display: flex !important;
           align-items: center;
           background-color: #deb2b2;
           border-radius: 4px;

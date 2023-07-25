@@ -8,7 +8,6 @@ import UserLayout from "./layouts/UserLayout";
 import UserProfile from "./pages/UserProfile";
 import { CODE, DASHBOARD, HOME, USER, USER_PROFILE } from "./constants/router";
 import PublicRoute from "./hoc/PublicRoute";
-import PrivateRoute from "./hoc/PrivateRoute";
 
 
 const App = () => {

@@ -24,7 +24,6 @@ const MyProfileReducer = createSlice({
         startDate: action.payload.startDate,
         email: action.payload.email
       }
-      // console.log(state.data, "state data")
     }
   },
   extraReducers: {
