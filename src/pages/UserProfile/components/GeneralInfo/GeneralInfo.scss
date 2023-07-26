@@ -180,7 +180,7 @@
   min-width: 0;
   padding: 0;
   margin: 0;
-  border: 0;
+  border: 0 !important;
   vertical-align: top;
 
   .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
@@ -258,9 +258,9 @@
       -webkit-tap-highlight-color: transparent;
       background-color: transparent;
       outline: 0;
-      border: 0;
+      border: 0 !important;
       margin: 0;
-      border-radius: 0;
+      border-radius: 0 !important;
       padding: 0;
       cursor: pointer;
       -webkit-user-select: none;
@@ -315,10 +315,10 @@
   min-width: 0%;
   bottom: 4px;
   pointer-events: none;
-  border: none;
-  border-bottom: 1px groove;
+  border: none !important;
+  border-bottom: 1px groove !important;
   border-radius: 0;
-  border-color: #ebeeef;
+  border-color: #ebeeef !important;
   .css-ihdtdm {
     float: unset;
     width: auto;
@@ -459,26 +459,23 @@
     }
   }
 }
-
-@media screen and (max-width: 480px){
+// @media screen and (max-width: 750px){
+//   .container{
+//     margin: 2% 4%;
+//   }
+//   .general_info_div{
+//     margin: 2%;
+//     padding: 20px;
+//     width: 93%;
+//   }
+// }
+@media screen and (max-width: 500px){
   .container{
-    margin: 0 6% 0 4% !important;
-  }
-  .h1_title{
-    margin: 2% 10% !important;
+    margin: 2% auto;
   }
   .general_info_div{
-    width: 79%;
-    margin: 2% 5%;
-  }
-  .worklogs{
-    width: 79% !important;
-    margin: 2% 5% !important;
-    .work_content{
-      padding: 0 10px !important;
-      .work_column{
-        padding: 10px !important;
-      }
-    }
+    width: 88%;
+    margin: 2% auto;
+    padding: 20px;
   }
 }

@@ -90,17 +90,38 @@
 
 @media screen and (max-width: 980px) {
   .worklogs{
-    width: 92%;
+    width: 95%;
+    padding: 20px;
     margin: 2%;
   }
   .work_content{
     display: flex;
     flex-wrap: wrap;
-    padding: 0 40px;
+    padding: 0 20px;
     align-items: center;
   }
   .work_column {
     width: 100%;
     padding: 10px 20px;
+  }
+}
+@media screen and (max-width: 750px){
+  .worklogs{
+    width: 89%;
+    margin: 2% 4% ;
+    padding: 20px;
+  }
+  .work_content{
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 500px){
+  .worklogs{
+    width: 88%;
+    margin: 2% auto;
+    padding: 20px;
+  }
+  .work_content{
+    padding: 20px;
   }
 }

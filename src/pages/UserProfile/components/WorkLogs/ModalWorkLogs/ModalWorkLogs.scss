@@ -73,9 +73,9 @@ h1{
    width: 700px;
    height: 350px;
    background-color: white;
-   border: none;
-   outline: none;
-   border-radius: 5px;
+   border: none !important;
+   outline: none !important;
+   border-radius: 5px !important;
    box-shadow: 24;
    padding: 4;
 }
