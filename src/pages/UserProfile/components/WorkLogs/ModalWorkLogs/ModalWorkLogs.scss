@@ -14,7 +14,7 @@
    justify-content: space-between;
    height: 70px;
    padding: 10px 5px;
-   margin: 40px 0 20px 0;
+   margin: 30px 0 20px 0;
 }
 .save_button{
    width: 100%;
@@ -52,6 +52,9 @@ h1{
    margin: 20px 0 !important; 
    height: 150px;  
 }
+.MuiFormControl-root{
+   height: 100%;
+}
 .MuiStack-root{
    display: flex;
    justify-content: space-between !important;
@@ -62,4 +65,76 @@ h1{
 .MuiInputBase-root{
    height: 100%;
 }
+.modal{
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 700px;
+   height: 350px;
+   background-color: white;
+   border: none;
+   outline: none;
+   border-radius: 5px;
+   box-shadow: 24;
+   padding: 4;
+}
+.MuiBox-root{
+   padding: 20px;
+}
 
+
+@media screen and (max-width: 980px){
+   .modal{
+      width: 600px;
+      height: 300px;
+   }
+   .time_div{
+      margin: 10px 0 20px 0;
+   }
+   .time_button_div{
+      width: 20%;
+      margin: 1% 38%;
+   }
+   .MuiFormControl-root{
+      height: 100%;
+   }
+}
+
+
+@media screen and (max-width: 600px){
+   .modal{
+      width: 350px;
+      height: 310px;
+   }
+   .modal_form{
+      height: 200px;
+   }
+   #modal-modal-title{
+      padding: 10px;
+   }
+   #modal-modal-description{
+      padding: 10px;
+      margin: 5px 0;
+   }
+   .time_div{
+      height: 120px;
+      display: block;
+      margin: 10px 0;
+   }
+   .MuiFormControl-root{
+      height: 100%;
+      margin: 2px 0;
+   }
+   .time_button_div{
+      width: 35%;
+      margin: 3% 32.5% ;
+      padding: 5px;
+   }
+   .MuiStack-root{
+      height: 40%;
+   }
+   .save_button{
+      width: 100%;
+   }
+}

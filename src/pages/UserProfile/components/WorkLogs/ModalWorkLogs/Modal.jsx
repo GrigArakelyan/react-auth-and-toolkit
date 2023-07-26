@@ -62,14 +62,14 @@ const style = {
       <Modal
         open={openModal}
         onClose={handleClose}>
-        <Box sx={style}>
+        <Box className="modal">
             <CloseLogo className='close_logo'
               onClick={handleClose}/>
           <Box id="modal-modal-title" variant="h4" component="h1">
             {addOrRefreshTime}
           </Box> 
           <Box id="modal-modal-description" sx={{ mt: 2 }}>
-            <form onSubmit={ addOrRefreshTime === AddWorkTime ? 
+            <form className='modal_form' onSubmit={ addOrRefreshTime === AddWorkTime ? 
                   handleSubmit(postWorkTime(dayId)) : handleSubmit(refreshTime(id))}>
               <div className='time_div'>
                 <Controller name="startTime" id="startTime" control={control}

@@ -12,7 +12,6 @@ const UserLayout = () => {
 
   
   return (
-  <>
      <PrivateRoute>
       <header className="user_header">
         <div className="header_img_div">
@@ -27,7 +26,6 @@ const UserLayout = () => {
       </header>
       <Outlet />
      </PrivateRoute >
-    </>
   );
 };
 export default UserLayout;
