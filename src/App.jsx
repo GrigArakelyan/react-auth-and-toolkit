@@ -7,7 +7,6 @@ import UserPage from "./pages/UserPage";
 import UserLayout from "./layouts/UserLayout";
 import UserProfile from "./pages/UserProfile";
 import { CODE, DASHBOARD, HOME, USER, USER_PROFILE } from "./constants/router";
-import PublicRoute from "./hoc/PublicRoute";
 import PublicLayout from "./layouts/PublicLayout";
 
 
@@ -19,8 +18,6 @@ const App = () => {
           <Route index element={<LoginEmail/>}/>
           <Route path={CODE} element={<LoginCode/>}/>
         </Route>
-         {/* <Route path={HOME} element={<PublicRoute > <LoginEmail/> </PublicRoute>} /> */}
-         {/* <Route path={CODE} element={<PublicRoute > <LoginCode /> </PublicRoute>} /> */}
         <Route path={USER} element={ <UserLayout/> }>
           <Route path={DASHBOARD} element={ <UserPage />} />
           <Route path={USER_PROFILE} element={<UserProfile />} />
