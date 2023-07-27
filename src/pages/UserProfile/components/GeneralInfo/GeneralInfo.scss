@@ -178,9 +178,8 @@
   .MuiOutlinedInput-notchedOutline{
     border-radius: 0px !important;
   }
-}
-   
-// End General Info Left Css //
+}  // End General Info Left Css //
+
 
 // Start General Info Right Css //
 .general_info_right {
@@ -295,11 +294,11 @@
     }
     .input_column_absences{
       width: 50% !important;
-      margin: 8px 0 ;
+      margin: 8px 0 !important;
     }
     .input_column_checkbox{
       width: 100% !important;
-      margin: 8px 0 ;
+      margin: 8px 0 !important;
     }
   }
 }
