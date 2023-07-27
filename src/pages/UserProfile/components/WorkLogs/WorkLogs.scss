@@ -119,9 +119,12 @@
   .worklogs{
     width: 88%;
     margin: 2% auto;
-    padding: 20px;
+    padding: 25px;
   }
   .work_content{
-    padding: 20px;
+    padding: 5px !important;
+    .work_column{
+      padding: 10px;
+    }
   }
 }

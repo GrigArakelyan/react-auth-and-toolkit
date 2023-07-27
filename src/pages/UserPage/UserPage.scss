@@ -62,26 +62,18 @@
       justify-content: center;
       margin: 0 auto;
       .h2_title{
-         width: 70%;
-         margin-top: 5%;
-         margin-left: 10%;
+         width: 80%;
+         margin: 5% auto;
       }
       .edit_profile_button{
          width: 50%;
-         margin-top: 5%;
-         margin-left: 10%;
+         margin: 5% auto;
       }
       .logout_button{
-         margin-top: 7%;
-         margin-left: 8%;
+         margin: 5% auto;
       }
    }
    .user_page_img{
       display: none;
    }
 }
-// @media screen and (max-width: 500px){
-//    .user_page_content{
-//       margin: 0 auto;
-//    }
-// }
