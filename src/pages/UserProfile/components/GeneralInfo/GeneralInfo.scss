@@ -169,6 +169,7 @@
     }
   }
 }
+// .MuiInputBase-input 
 .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -209,7 +210,6 @@
       font: inherit;
       letter-spacing: inherit;
       color: currentColor;
-      // padding: 4px 0 5px;
       border: 0;
       box-sizing: content-box;
       background: none;
@@ -223,7 +223,7 @@
       animation-name: mui-auto-fill-cancel;
       -webkit-animation-duration: 10ms;
       animation-duration: 10ms;
-      padding: 5px 7px;
+      padding: 7px 2px !important;
       padding-right: 0;
   }
 

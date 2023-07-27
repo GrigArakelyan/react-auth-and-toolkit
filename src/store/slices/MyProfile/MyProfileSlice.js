@@ -5,7 +5,6 @@ const MyProfileReducer = createSlice({
   name: "myProfile",
   initialState: {
     data: {},
-    status: null,
     loading: false,
     error: null,
   },
@@ -24,6 +23,9 @@ const MyProfileReducer = createSlice({
         startDate: action.payload.startDate,
         email: action.payload.email
       }
+    },
+    clearData(state, action){
+      state.data = action.payload
     }
   },
   extraReducers: {
@@ -43,4 +45,4 @@ const MyProfileReducer = createSlice({
 });
 
 export default MyProfileReducer.reducer;
-export const {changeGeneralInfo} = MyProfileReducer.actions;
+export const {changeGeneralInfo, clearData} = MyProfileReducer.actions;

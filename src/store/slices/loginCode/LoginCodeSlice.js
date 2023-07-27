@@ -9,7 +9,11 @@ const LoginCodeReducer = createSlice({
     loading: false,
     error: null,
   },
-  reducers: {},
+  reducers: {
+    removeTokenRed(state, action){
+      state.data = action.payload
+    }
+  },
   extraReducers: {
     [fetchLoginCode.pending]: (state) => {
       state.loading = true;
@@ -26,3 +30,4 @@ const LoginCodeReducer = createSlice({
   },
 });
 export default LoginCodeReducer.reducer;
+export const {removeTokenRed} = LoginCodeReducer.actions
