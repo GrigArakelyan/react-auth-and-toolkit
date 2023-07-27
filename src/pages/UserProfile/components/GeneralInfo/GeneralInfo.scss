@@ -169,7 +169,6 @@
     }
   }
 }
-// .MuiInputBase-input 
 .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -206,7 +205,7 @@
     position: relative;
     border-radius: 4px;
     padding-right: 14px;
-    .css-nxo287-MuiInputBase-input-MuiOutlinedInput-input {
+    .MuiInputBase-input {
       font: inherit;
       letter-spacing: inherit;
       color: currentColor;
@@ -223,9 +222,8 @@
       animation-name: mui-auto-fill-cancel;
       -webkit-animation-duration: 10ms;
       animation-duration: 10ms;
-      padding: 6px 2px !important;
+      padding: 7px 2px !important;
   }
-
   .css-1laqsz7-MuiInputAdornment-root {
     display: -webkit-box;
     display: -webkit-flex;
