@@ -387,7 +387,9 @@
     }
   }
 }
-
+.clearData{
+  padding: 0 !important;
+}
 @media screen and (max-width: 980px) {
   .general_info_div{
     width: 92%;
