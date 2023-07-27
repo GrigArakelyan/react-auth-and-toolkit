@@ -205,24 +205,31 @@
     position: relative;
     border-radius: 4px;
     padding-right: 14px;
-    .MuiInputBase-input {
-      font: inherit;
-      letter-spacing: inherit;
-      color: currentColor;
-      border: 0;
-      box-sizing: content-box;
-      background: none;
-      height: 1.4375em;
-      margin: 0;
-      -webkit-tap-highlight-color: transparent;
-      display: block;
-      min-width: 0;
-      width: 100%;
-      -webkit-animation-name: mui-auto-fill-cancel;
-      animation-name: mui-auto-fill-cancel;
-      -webkit-animation-duration: 10ms;
-      animation-duration: 10ms;
-      padding: 7px 2px !important;
+    
+  //   input#\:r9\: {
+  //     font: inherit;
+  //     letter-spacing: inherit;
+  //     color: currentColor;
+  //     border: 0;
+  //     box-sizing: content-box;
+  //     background: none;
+  //     height: 1.4375em;
+  //     margin: 0;
+  //     -webkit-tap-highlight-color: transparent;
+  //     display: block;
+  //     min-width: 0;
+  //     width: 100%;
+  //     -webkit-animation-name: mui-auto-fill-cancel;
+  //     animation-name: mui-auto-fill-cancel;
+  //     -webkit-animation-duration: 10ms;
+  //     animation-duration: 10ms;
+  //     padding: 7px 2px !important;
+  // }
+  // input#\:rd\:{
+  //   padding: 7px 2px !important;
+  // }
+  input{
+    padding: 5.5px 2px;
   }
   .css-1laqsz7-MuiInputAdornment-root {
     display: -webkit-box;
