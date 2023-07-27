@@ -38,7 +38,7 @@
       .inputs_column {
         display: flex;
         flex-direction: column;
-        margin-right: 25px;
+        margin:8px 30px 8px 0;
         width: 20%;
         .span_text {
           color: Grey;
@@ -67,7 +67,7 @@
         display: flex;
         flex-direction: column;
         outline: none;
-        margin-right: 25px;
+        margin:8px 30px 8px 0;
         width: 30%;
         font-size: 16px;
         border-color: #ebeeef;
@@ -103,12 +103,13 @@
         font-size: 16px;
         border-color: #ebeeef;
         padding: 3px;
-        margin-top: 22.5px;
+        margin: 30.5px 10px 8px 0 ;
       }
       .input_column_absences {
         display: flex;
         flex-direction: column;
-        margin-right: 30px;
+        margin:8px 35px 8px 10px;
+
         width: 8%;
         .input_column_1 {
           border: none;
@@ -136,7 +137,7 @@
       .input_column_checkbox {
         display: flex;
         align-items: center;
-        margin: 27px 0 0 15px;
+        margin: 29px 0 8px 20px;
         .input_checkbox {
           padding: 15px;
           height: 19px;
@@ -427,7 +428,7 @@
     width: 100%;
     align-items: start !important;
     justify-content: start !important;
-    margin: 5px 0;
+    margin: 8px 0;
     .inputs_column{
       display: flex;
       flex-direction: column;
@@ -435,7 +436,7 @@
       justify-content:start;
       align-items: start;
       width: 100% !important;
-      margin: 8px 0 !important;
+      margin: 8px 0 ;
     }
     .inputs_column_2{
       display: flex;
@@ -446,16 +447,16 @@
       margin: 5px 0 !important;
       .input_column_phone{
         width: 500% !important;
-        margin: 8px 0 !important;
+        margin: 8px 0 ;
       }
     }
     .input_column_absences{
       width: 50% !important;
-      margin: 8px 0 !important;
+      margin: 8px 0 ;
     }
     .input_column_checkbox{
       width: 100% !important;
-      margin: 8px 0 !important;
+      margin: 8px 0 ;
     }
   }
 }
