@@ -21,13 +21,11 @@ const UserProfile = () => {
 
   return (
     <div className="profile_page">
-      <h1 className="h1_title">My Profile</h1>
-      {/* <div className="container"> */}
+      <h1 className="h1_title">My Profile</h1>  
         {data.loading? 
           <Loading /> : 
           <GeneralInfo />}
           <WorkLogs />
-      {/* </div> */}
     </div>
   );
 };
