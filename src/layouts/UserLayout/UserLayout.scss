@@ -31,9 +31,10 @@
   .user_header{
     width: 100vw;
     height: 55px;
-    position: relative;
-    background-color: #003367;
+    position: fixed;
     display: block;
+    z-index: 1;
+    background-color: #003367;
     .header_img_div{
       height: 55px;
       display: flex;
