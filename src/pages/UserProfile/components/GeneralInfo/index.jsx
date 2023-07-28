@@ -7,16 +7,17 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import GitHubIcon from "../../../../img/github.png";
 import SlackIcon from "../../../../img/slack.png";
-import { onlyNumber } from "../../../../utils/validation";
+import { email, onlyNumber } from "../../../../utils/validation";
 import { useDispatch } from "react-redux";
 import { changeGeneralInfo } from "../../../../store/slices/MyProfile/MyProfileSlice";
+import { formatNumberInput } from "../../../../helpers/input";
 
 
 const GeneralInfo = () => {
   const {data, error} = useSelector(selectMyProfile);
   const adapter = new AdapterDayjs();
   const dispatch = useDispatch();
-  const {register, control,formState: { isDirty }, handleSubmit} = useForm(
+  const { register, control, formState:{errors, isDirty }, handleSubmit} = useForm(
     {defaultValues: 
       { ...data,
         firstName: data?.firstName,
@@ -41,7 +42,6 @@ const GeneralInfo = () => {
     dispatch(changeGeneralInfo(postData));
   }
 
-
   return (
     <form className={error ? "general_info_div_error" : "general_info_div"} 
       onSubmit={handleSubmit(postUserData)}>
@@ -51,12 +51,12 @@ const GeneralInfo = () => {
         <div className="inputs_row">
           <div className="inputs_column">
             <span className="span_text">First name</span>
-            <input className="input_column_1" type="text"
+            <input className={errors.firstName ? "error" : "input_column_1"} type="text"
             {...register("firstName" , {required: true})}/>
           </div>
           <div className="inputs_column">
             <span className="span_text">Last Name</span>
-            <input className="input_column_1" type="text"
+            <input className={errors.lastName ? "error" : "input_column_1"} type="text"
             {...register("lastName" ,{required: true})}/>
           </div>
           <div className="inputs_column">
@@ -81,13 +81,13 @@ const GeneralInfo = () => {
           </div>
           <div className="inputs_column_2">
             <span className="span_text">Personal Email</span>
-            <input className="input_column_2" type="text"
-              {...register("personalEmail" ,{required: true})}/>
+            <input className={errors.personalEmail ? "error" : "input_column_2"} type="text"
+              {...register("personalEmail" ,{required: true, pattern: email})}/>
           </div>
           <input className="input_column_phone" type="text"
-            placeholder="Mobile Phone"
+            placeholder={errors.mobilePhone ? "error" : "Mobile Phone"}
             {...register("mobilePhone" ,{required: true})}
-              onInput={(e) => (e.target.value = e.target.value.replace(onlyNumber, ""))}/>
+              onInput={formatNumberInput}/>
         </div>
         <div className="inputs_row">
           <div className="inputs_column">
@@ -125,16 +125,18 @@ const GeneralInfo = () => {
           <span className="account_span">Slack</span>
           <div className="input_icon">
             <img src={SlackIcon} className="icon" alt="img"/>
-            <input className="input_account" type="text" placeholder="Enter you slack user name"
-            {...register("slackUserName")}/>
+            <input className={errors.slackUserName ? "error_account" : "input_account"} type="text" 
+              placeholder="Enter you slack user name"
+              {...register("slackUserName", {required: true})}/>
           </div>
         </div>
         <div className="account">
           <span className="account_span">Github</span>
           <div className="input_icon">
             <img src={GitHubIcon} className="icon" alt="img"/>
-            <input className="input_account" type="text" placeholder="Enter your github user name" 
-            {...register("gitHubUserName")}/>
+            <input className={errors.gitHubUserName ? "error_account" : "input_account"} type="text" 
+              placeholder="Enter your github user name" 
+              {...register("gitHubUserName", {required: true})}/>
           </div>
         </div>
       </div>

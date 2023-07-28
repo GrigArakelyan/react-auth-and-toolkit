@@ -232,6 +232,24 @@
     }
   }
 }
+.error{
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-bottom: 1px groove;
+  border-color: #af2727;
+  padding: 3px;
+}
+.error_account{
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-bottom: 1px groove;
+  border-color: #af2727;
+  padding: 5px 5px 5px 33px;
+  margin-top: 10px;
+}
+
 @media screen and (max-width: 1300px){
   .general_info_div{
     width: 95%;
