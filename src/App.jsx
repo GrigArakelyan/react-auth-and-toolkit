@@ -14,13 +14,17 @@ const App = () => {
   return (
     <div className="App">
       <Routes>
-        <Route path={HOME} element={<PublicLayout />}>
-          <Route index element={<LoginEmail/>}/>
-          <Route path={CODE} element={<LoginCode/>}/>
+        <Route path={HOME} element={<PublicRoute />}>
+          <Route path={HOME} element={<PublicLayout />}>
+            <Route index element={<LoginEmail/>}/>
+            <Route path={CODE} element={<LoginCode/>}/>
+          </Route>
         </Route>
-        <Route path={USER} element={ <UserLayout/> }>
-          <Route path={DASHBOARD} element={ <UserPage />} />
-          <Route path={USER_PROFILE} element={<UserProfile />} />
+        <Route path={USER} element={ <PrivateRoute/> }>
+          <Route path={USER} element={ <UserLayout/> }>
+            <Route path={DASHBOARD} element={ <UserPage />} />
+            <Route path={USER_PROFILE} element={<UserProfile />} />
+          </Route>
         </Route>
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
