@@ -7,7 +7,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import GitHubIcon from "../../../../img/github.png";
 import SlackIcon from "../../../../img/slack.png";
-import { email, onlyNumber } from "../../../../utils/validation";
+import { onlyNumber } from "../../../../utils/validation";
 import { useDispatch } from "react-redux";
 import { changeGeneralInfo } from "../../../../store/slices/MyProfile/MyProfileSlice";
 import { formatNumberInput } from "../../../../helpers/input";
@@ -82,7 +82,7 @@ const GeneralInfo = () => {
           <div className="inputs_column_2">
             <span className="span_text">Personal Email</span>
             <input className={errors.personalEmail ? "error" : "input_column_2"} type="text"
-              {...register("personalEmail" ,{required: true, pattern: email})}/>
+              {...register("personalEmail" ,{required: true})}/>
           </div>
           <input className="input_column_phone" type="text"
             placeholder={errors.mobilePhone ? "error" : "Mobile Phone"}
