@@ -1,13 +1,14 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Skeleton from '@mui/material/Skeleton';
+import "./Loading.scss"
 
 const LoadingComp = () => {
   return (
-    <Box sx={{ width: 600, height: 100 }}>
-      <Skeleton />
-      <Skeleton animation="wave" />
-      <Skeleton animation={false} />
+    <Box className="loading_div">
+        <Skeleton />
+        <Skeleton animation="wave" />
+        <Skeleton animation={false} />
     </Box>
   );
 }

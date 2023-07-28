@@ -18,16 +18,15 @@ const UserProfile = () => {
       .catch(() => {});
   }, [dispatch]);
 
+
   return (
     <div className="profile_page">
       <h1 className="h1_title">My Profile</h1>
       <div className="container">
         {data.loading? 
-        <div className="loading_div">
-          <Loading /> 
-        </div> : 
-        <GeneralInfo />}
-        <WorkLogs />
+          <Loading /> : 
+          <GeneralInfo />}
+          <WorkLogs />
       </div>
     </div>
   );

@@ -86,7 +86,7 @@ h1{
 
 @media screen and (max-width: 980px){
    .modal{
-      width: 600px;
+      width: 500px;
       height: 300px;
    }
    .time_div{
@@ -104,8 +104,8 @@ h1{
 
 @media screen and (max-width: 600px){
    .modal{
-      width: 350px;
-      height: 310px;
+      width: 300px;
+      height: 300px;
    }
    .modal_form{
       height: 200px;
@@ -115,7 +115,7 @@ h1{
    }
    #modal-modal-description{
       padding: 10px;
-      margin: 5px 0;
+      margin: 2px 0;
    }
    .time_div{
       height: 120px;
@@ -126,9 +126,12 @@ h1{
       height: 100%;
       margin: 2px 0;
    }
+   .time_div{
+      padding: 5px;
+   }
    .time_button_div{
-      width: 35%;
-      margin: 3% 32.5% ;
+      width: 40%;
+      margin: 2% 29% ;
       padding: 5px;
    }
    .MuiStack-root{
