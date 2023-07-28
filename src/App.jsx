@@ -8,6 +8,8 @@ import UserLayout from "./layouts/UserLayout";
 import UserProfile from "./pages/UserProfile";
 import { CODE, DASHBOARD, HOME, USER, USER_PROFILE } from "./constants/router";
 import PublicLayout from "./layouts/PublicLayout";
+import PublicRoute from './hoc/PublicRoute'
+import PrivateRoute from './hoc/PrivateRoute'
 
 
 const App = () => {
@@ -20,7 +22,7 @@ const App = () => {
             <Route path={CODE} element={<LoginCode/>}/>
           </Route>
         </Route>
-        <Route path={USER} element={ <PrivateRoute/> }>
+        <Route path={USER} element={ <PrivateRoute /> }>
           <Route path={USER} element={ <UserLayout/> }>
             <Route path={DASHBOARD} element={ <UserPage />} />
             <Route path={USER_PROFILE} element={<UserProfile />} />

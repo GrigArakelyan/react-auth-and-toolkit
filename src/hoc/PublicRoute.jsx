@@ -1,12 +1,14 @@
 import { Navigate } from "react-router";
 import { DASHBOARD } from "../constants/router";
 import useAuth from "../hook/useAuth";
+import { Outlet } from "react-router"
 
-const PublicRoute = ({children}) => {
+
+const PublicRoute = () => {
 
    const auth = {token: useAuth()}
 
-   return !auth?.token ? children : <Navigate to={DASHBOARD} />  
+   return !auth?.token ?  <Outlet /> : <Navigate to={DASHBOARD} />  
 
 }
 
