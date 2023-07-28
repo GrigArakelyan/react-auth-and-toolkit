@@ -1,7 +1,7 @@
 .worklogs {
-  width: 99.5%;
-  padding: 20px 30px 30px 20px;
-  margin-top: 30px;
+  width: 96.5%;
+  padding: 12px;
+  margin: 1%;
   border: 1px groove;
   border-color: #ebeeef;
   border-radius: 4px;
@@ -87,11 +87,16 @@
     }
   }
 }
-
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 1300px){
   .worklogs{
     width: 95%;
-    padding: 20px;
+    margin: 2%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .worklogs{
+    width: 93%;
     margin: 2%;
   }
   .work_content{
@@ -105,21 +110,21 @@
     padding: 10px 20px;
   }
 }
-@media screen and (max-width: 750px){
+
+@media screen and (max-width: 780px){
   .worklogs{
     width: 89%;
-    margin: 2% 4% ;
-    padding: 20px;
+    margin: 2% 3%;
   }
   .work_content{
     padding: 20px;
   }
 }
-@media screen and (max-width: 500px){
+
+@media screen and (max-width: 550px){
   .worklogs{
-    width: 88%;
-    margin: 2% auto;
-    padding: 25px;
+    width: 90%;
+    margin: 2% auto !important;
     border-radius: 7px;
   }
   .work_content{

@@ -1,41 +1,58 @@
 .profile_page {
   height: 100vh;
   overflow-x: hidden;
-  margin: 0 1% 0 1.7%;
+  margin: 0 0.5% 0 3.5% !important;
   overflow-y: auto;
   .h1_title {
     text-align: start !important;
-    margin: 1% 4% 0 4%;
+    margin: 0.7% 1%;
     font-size: 24px;
     line-height: 32px;
     font-weight: 500;
     color: #003367;
   }
-  .container {
-    width: 92%;
-    margin: 1% 4% 0 4%;
+}
+
+
+@media screen and (max-width: 1300px){
+  .profile_page{
+    height: 100vh;
+    overflow-x: hidden;
+    margin: 0 0.5% 0 4.6% !important;
+    overflow-y: auto;
+  }
+  .h1_title{
+    margin: 0.7% 2% !important;
   }
 }
-
-.loading_div{
-  margin: 0 auto;
-  padding: 3% 30%;
-  margin: 6% 2%;
-}
-
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 1000px) {
   .profile_page{
-    margin: 0 3% 0 6.5%;
+    height: 100vh;
+    overflow-x: hidden;
+    margin: 0 0.5% 0 5.8% !important;
+    overflow-y: auto;
     .h1_title{
-      margin: 2% 30% 0 4%;
-    }
-    .container {
-      margin: 1% 2% 0 2%;
+      margin: 1% 2% !important;
     }
   }
 }
-@media screen and (max-width: 500px){
+@media screen and (max-width: 780px){
   .profile_page{
-    margin: 0 auto;
+    height: 100vh;
+    overflow-x: hidden;
+    margin: 0 0.5% 0 8% !important;
+    overflow-y: auto;
+    .h1_title{
+      margin: 0.7% 3% !important;
+    }
+  }
+}
+
+@media screen and (max-width: 550px){
+  .profile_page{
+    margin: 0 2% !important;
+    .h1_title{
+      margin: 0.7% 2% !important;
+    }
   }
 }
