@@ -13,13 +13,12 @@ import { LoginEmailPostData, DataLoginEmail, IFormData } from "../../types/Login
 
 
 const LoginEmail = () => {
-
   const { register, formState: { errors }, handleSubmit, reset,} = useForm<IFormData>({mode: 'onChange'});
   const data:DataLoginEmail = useSelector(selectEmailData);
   const dispatch = useDispatch();
   const navigate = useNavigate();
     
-  const postEmail = (data:any):void => {  
+  const postEmail = (data:LoginEmailPostData):void => {  
     data = {
       email: data.email,
       languageID: "1",

@@ -1,7 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { Slice, createSlice } from "@reduxjs/toolkit";
 import { fetchMyProfile } from "./MyProfileThunk";
 
-const MyProfileReducer = createSlice({
+const MyProfileReducer:Slice = createSlice({
   name: "myProfile",
   initialState: {
     data: {},

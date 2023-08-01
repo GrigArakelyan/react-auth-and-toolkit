@@ -6,8 +6,8 @@ import { AxiosResponse } from "axios";
 import { LoginEmailPostData } from "../types/LoginEmail";
 import { LoginCodePostData } from "../types/LoginCode";
 
-export const postLoginEmail = (body:LoginEmailPostData):Promise<AxiosResponse<any, any>> =>
+export const postLoginEmail = (body:LoginEmailPostData) =>
   AxiosInstance.post(loginEmailPostURL, body);
-export const postLoginCode = (body:LoginCodePostData):Promise<AxiosResponse<any, any>> =>
+export const postLoginCode = (body:LoginCodePostData) =>
   AxiosInstance.post(loginCodePostURL, body);
 export const getMyProfile = ():Promise<AxiosResponse<any, any>> => AxiosInstance.get(myProfileGetUrl);

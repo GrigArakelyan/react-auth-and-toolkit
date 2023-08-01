@@ -6,7 +6,7 @@ const WorkLogsReducer = createSlice({
   initialState: {
     data: WeekData,
     status: null,
-    loadung: false,
+    loading: false,
     error: null,
   },
   reducers: {

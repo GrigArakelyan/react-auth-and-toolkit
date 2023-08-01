@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchLoginEmail } from "./LoginEmailThunk";
 
-const { reducer } = createSlice({
+const LoginEmailReducer = createSlice({
   name: "loginEmail",
   initialState: {
     data: {},
@@ -25,4 +25,4 @@ const { reducer } = createSlice({
   },
 });
 
-export default reducer;
+export default LoginEmailReducer.reducer;
