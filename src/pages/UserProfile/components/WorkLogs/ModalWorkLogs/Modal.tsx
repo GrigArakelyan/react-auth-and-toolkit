@@ -6,7 +6,6 @@ import Modal from '@mui/material/Modal';
 import "../ModalWorkLogs/ModalWorkLogs.scss"
 import { addWorkTime, refreshWorkTime } from '../../../../../store/slices/WorkLogs/WorkLogsSlice';
 import { useDispatch } from 'react-redux';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import TimePickerEnd from '../../../../../Components/TimePickerEnd';
 import TimePickerStart from '../../../../../Components/TimePickerStart';
 import { AddWorkTime } from "../../../../../constants/WorkLogs";

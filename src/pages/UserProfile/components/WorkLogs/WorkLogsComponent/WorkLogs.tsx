@@ -12,8 +12,8 @@ import { WorkDayType } from "../../../../../types/WorkLog";
 const WorkLogsComponent:FC = ({day}:any) => {
    const dispatch = useDispatch();
    const [id, setId] = useState(Number);
-   const [addOrRefreshTime, setAddOrRefreshTime] = useState("Select the hours");
-   const [openModal, setOpenModal] = useState(false);
+   const [addOrRefreshTime, setAddOrRefreshTime] = useState<string>("Select the hours");
+   const [openModal, setOpenModal] = useState<boolean>(false);
 
    const handleOpenAddTime = ():void => {
       setOpenModal(true)

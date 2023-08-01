@@ -6,7 +6,7 @@ import React, { FC } from "react";
 import { WorkLogType } from "../../../../types/WorkLog";
 
 const WorkLogs:FC = () => {
-  
+
   const week:WorkLogType = useSelector(selectWorkLogs);
 
   return (
