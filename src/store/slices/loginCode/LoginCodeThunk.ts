@@ -3,7 +3,7 @@ import { postLoginCode } from "../../../services/login";
 import { setRefreshToken, setToken } from "../../../services/token";
 import { LoginCodePostData } from "../../../types/LoginCode";
 
-export const fetchLoginCode: AsyncThunk<any, LoginCodePostData, any> = createAsyncThunk(
+export const fetchLoginCode: any = createAsyncThunk(
   "loginCode/fetchLoginCode",
   async (userLoginObj:LoginCodePostData, { rejectWithValue }) => {
     return postLoginCode(userLoginObj)
