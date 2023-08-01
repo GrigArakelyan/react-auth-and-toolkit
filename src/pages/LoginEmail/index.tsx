@@ -9,11 +9,12 @@ import { useForm } from "react-hook-form";
 import { selectEmailData } from "../../store/selectores/EmailSelector";
 import { CODE } from "../../constants/router";
 import { email } from "../../utils/validation";
-import { LoginEmailPostData, DataLoginEmail } from "../../types/LoginEmail";
+import { LoginEmailPostData, DataLoginEmail, IFormData } from "../../types/LoginEmail";
 
 
 const LoginEmail = () => {
-  const { register, formState: { errors }, handleSubmit, reset,} = useForm();
+
+  const { register, formState: { errors }, handleSubmit, reset,} = useForm<IFormData>({mode: 'onChange'});
   const data:DataLoginEmail = useSelector(selectEmailData);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -52,7 +53,7 @@ const LoginEmail = () => {
           {errors?.email && (
             <div className="error">
               <ErrorLogo className="error_logo"  />
-              <p className="error_text">{errors?.email?.message}</p>
+              <p className="error_text">{errors.email.message }</p>
             </div>
           )}
           <div className="input_span_email">
