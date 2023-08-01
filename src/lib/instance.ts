@@ -1,7 +1,7 @@
-import axios from "axios";
+import axios, { AxiosInstance } from "axios";
 import { getRefreshToken, getToken, setRefreshToken, setToken } from "../services/token";
 
-const instance = axios.create({
+const instance:AxiosInstance = axios.create({
   baseURL: process.env.REACT_APP_BASE_URL,
   headers: {
     "Content-Type": "application/json",

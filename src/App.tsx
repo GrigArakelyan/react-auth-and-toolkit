@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import "./App.scss";
 import { Navigate, Route, Routes } from "react-router";
 import LoginEmail from "./pages/LoginEmail";
@@ -12,7 +12,7 @@ import PublicRoute from './hoc/PublicRoute'
 import PrivateRoute from './hoc/PrivateRoute'
 
 
-const App = () => {
+const App:FC = () => {
   return (
     <div className="App">
       <Routes>

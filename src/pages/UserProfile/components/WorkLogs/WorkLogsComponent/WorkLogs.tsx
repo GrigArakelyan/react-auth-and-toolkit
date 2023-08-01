@@ -6,25 +6,25 @@ import {removeWorkTime} from "../../../../../store/slices/WorkLogs/WorkLogsSlice
 import { useDispatch } from "react-redux";
 import ModalWorkLogs from "../ModalWorkLogs/Modal";
 import { AddWorkTime, UpdateWorkTime } from "../../../../../constants/WorkLogs";
-import React from "react";
+import React, { FC } from "react";
 import { WorkDayType } from "../../../../../types/WorkLog";
 
-const WorkLogsComponent = ({day}:any) => {
+const WorkLogsComponent:FC = ({day}:any) => {
    const dispatch = useDispatch();
    const [id, setId] = useState(Number);
    const [addOrRefreshTime, setAddOrRefreshTime] = useState("Select the hours");
    const [openModal, setOpenModal] = useState(false);
 
-   const handleOpenAddTime = () => {
+   const handleOpenAddTime = ():void => {
       setOpenModal(true)
       setAddOrRefreshTime(AddWorkTime)
    };
-   const handleOpenRefreshTime = (id:number)=> {
+   const handleOpenRefreshTime = (id:number):void => {
       setId(id)
       setOpenModal(true)
       setAddOrRefreshTime(UpdateWorkTime)
    };
-   const removeTime = (id:number) => {    
+   const removeTime = (id:number):void => {    
       dispatch(removeWorkTime({
         id: id
       }))

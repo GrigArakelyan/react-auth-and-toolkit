@@ -2,10 +2,11 @@ import "./WorkLogs.scss";
 import { useSelector } from "react-redux";
 import { selectWorkLogs } from "../../../../store/selectores/WorkLogsSelector";
 import WorkLogsComponent from './WorkLogsComponent/WorkLogs'
-import React from "react";
+import React, { FC } from "react";
 import { WorkLogType } from "../../../../types/WorkLog";
 
-const WorkLogs = () => {
+const WorkLogs:FC = () => {
+  
   const week:WorkLogType = useSelector(selectWorkLogs);
 
   return (

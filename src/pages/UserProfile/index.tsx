@@ -3,16 +3,16 @@ import WorkLogs from "./components/WorkLogs/";
 import Loading from "../../Components/Loading";
 import { fetchMyProfile } from "../../store/slices/MyProfile/MyProfileThunk";
 import "./UserProfile.scss";
-import React, { useEffect } from "react";
+import React, {FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectMyProfile } from "../../store/selectores/MyProfileSelector";
 import { DataLoginEmail } from "../../types/LoginEmail";
 
-const UserProfile = () => {
+const UserProfile:FC = () => {
   const dispatch = useDispatch();
   const data:DataLoginEmail = useSelector(selectMyProfile);
 
-  useEffect(() => {
+  useEffect(():void => {
     dispatch(fetchMyProfile())
       .unwrap()
       .then(() => {})

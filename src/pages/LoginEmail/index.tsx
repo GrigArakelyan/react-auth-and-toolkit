@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import {ReactComponent as ErrorLogo} from "../../img/icons/ErrorOutline.svg"
 import { useNavigate } from "react-router-dom";
 import loginimg from "../../img/loginImg.png";
@@ -12,7 +12,7 @@ import { email } from "../../utils/validation";
 import { LoginEmailPostData, DataLoginEmail, IFormData } from "../../types/LoginEmail";
 
 
-const LoginEmail = () => {
+const LoginEmail:FC = () => {
   const { register, formState: { errors }, handleSubmit, reset,} = useForm<IFormData>({mode: 'onChange'});
   const data:DataLoginEmail = useSelector(selectEmailData);
   const dispatch = useDispatch();

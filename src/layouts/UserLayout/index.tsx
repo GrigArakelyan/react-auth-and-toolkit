@@ -5,9 +5,9 @@ import {ReactComponent as UserProfileLogo} from "../../img/icons/Schedule.svg"
 import { Outlet } from "react-router";
 import { DASHBOARD, USER_PROFILE } from "../../constants/router";
 import { NavLink } from "react-router-dom";
-import React from "react";
+import React, { FC } from "react";
 
-const UserLayout = () => {
+const UserLayout:FC = () => {
   const classActive = ({isActive}:any) => isActive ? "active" : "link" 
 
   

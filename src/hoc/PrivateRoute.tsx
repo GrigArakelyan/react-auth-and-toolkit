@@ -2,9 +2,9 @@ import { Navigate } from "react-router";
 import { HOME } from "../constants/router";
 import useAuth from "../hook/useAuth";
 import { Outlet } from "react-router"
-import React from "react";
+import React, { FC } from "react";
 
-const PrivateRoute = () => {
+const PrivateRoute:FC = () => {
 
    const auth = {token: useAuth()}
    

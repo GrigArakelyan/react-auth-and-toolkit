@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import React from "react";
+import React, { FC } from "react";
 import { fetchLoginCode } from "../../store/slices/loginCode/LoginCodeThunk";
 import { selectCodeData } from "../../store/selectores/CodeSelector";
 import { DASHBOARD } from "../../constants/router";
@@ -14,7 +14,7 @@ import { formatNumberInput } from "../../helpers/input";
 import { LoginCodePostData } from "../../types/LoginCode";
 import { LoginEmailPostData } from "../../types/LoginEmail";
 
-const LoginCode = () => {
+const LoginCode:FC = () => {
   const {error, loading} = useSelector(selectCodeData);
   const { register, handleSubmit, watch, formState: { errors }, reset } = useForm({
     mode: "onChange",

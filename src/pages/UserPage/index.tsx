@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import "../UserPage/UserPage.scss";
 import userPageImg from "../../img/userpageimg.png";
 import { useNavigate } from "react-router";
@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 import { removeTokenRed } from "../../store/slices/loginCode/LoginCodeSlice";
 import { clearData } from "../../store/slices/MyProfile/MyProfileSlice";
 
-const UserPage = () => {
+const UserPage:FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 

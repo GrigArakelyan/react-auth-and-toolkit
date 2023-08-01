@@ -10,11 +10,11 @@ import SlackIcon from "../../../../img/slack.png";
 import { useDispatch } from "react-redux";
 import { changeGeneralInfo } from "../../../../store/slices/MyProfile/MyProfileSlice";
 import { formatNumberInput } from "../../../../helpers/input";
-import React from "react";
+import React, { FC } from "react";
 import { GeneralInfoData } from "../../../../types/GeneralInfo";
 
 
-const GeneralInfo = () => {
+const GeneralInfo:FC = () => {
   const {data, error} = useSelector(selectMyProfile);
 
   const adapter = new AdapterDayjs();
