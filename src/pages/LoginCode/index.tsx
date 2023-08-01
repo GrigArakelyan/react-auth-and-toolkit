@@ -11,7 +11,7 @@ import { selectCodeData } from "../../store/selectores/CodeSelector";
 import { DASHBOARD } from "../../constants/router";
 import { formatNumberInput } from "../../helpers/input";
 import React from "react";
-import { LoginCodeInputsChange, LoginCodePostData } from "../../types/LoginCode";
+import { LoginCodePostData } from "../../types/LoginCode";
 
 const LoginCode = () => {
   const {error, loading} = useSelector(selectCodeData);
@@ -25,7 +25,7 @@ const LoginCode = () => {
 
   const inputs = ["code1", "code2", "code3", "code4", "code5", "code6"];
 
-  const postCode = (data:LoginCodeInputsChange) => {
+  const postCode = (data:any) => {
     const userLoginObj:LoginCodePostData = {
       ...state,
       code:
@@ -39,7 +39,7 @@ const LoginCode = () => {
     dispatch(fetchLoginCode(userLoginObj))
       .unwrap()
       .then(() => {
-        navigate(DASHBOARD, {required: true});
+        navigate(DASHBOARD);
       })
       .catch(() => {});
   };
