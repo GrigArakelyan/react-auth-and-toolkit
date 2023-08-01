@@ -34,7 +34,7 @@ const GeneralInfo = () => {
         gitHubUserName:data?.gitHubUserName }
     })
 
-  const postUserData = (postData:GeneralInfoData) => {
+  const postUserData = (postData:GeneralInfoData):void => {
     postData = {
       ...postData, 
       dateOfBirth: new Date(postData?.dateOfBirth).toISOString(),
