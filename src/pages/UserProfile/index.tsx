@@ -6,10 +6,11 @@ import "./UserProfile.scss";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectMyProfile } from "../../store/selectores/MyProfileSelector";
+import { DataLoginEmail } from "../../types/LoginEmail";
 
 const UserProfile = () => {
   const dispatch = useDispatch();
-  const data = useSelector(selectMyProfile);
+  const data:DataLoginEmail = useSelector(selectMyProfile);
 
   useEffect(() => {
     dispatch(fetchMyProfile())

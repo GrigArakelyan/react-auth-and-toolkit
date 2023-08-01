@@ -6,11 +6,11 @@ import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
+import React from "react";
 import { fetchLoginCode } from "../../store/slices/loginCode/LoginCodeThunk";
 import { selectCodeData } from "../../store/selectores/CodeSelector";
 import { DASHBOARD } from "../../constants/router";
 import { formatNumberInput } from "../../helpers/input";
-import React from "react";
 import { LoginCodePostData } from "../../types/LoginCode";
 
 const LoginCode = () => {
@@ -23,7 +23,7 @@ const LoginCode = () => {
   const navigate = useNavigate();
   const { state } = useLocation();
 
-  const inputs = ["code1", "code2", "code3", "code4", "code5", "code6"];
+  const inputs: string[] = ["code1", "code2", "code3", "code4", "code5", "code6"];
 
   const postCode = (data:any) => {
     const userLoginObj:LoginCodePostData = {
@@ -44,7 +44,7 @@ const LoginCode = () => {
       .catch(() => {});
   };
 
-  const resetInputs = () => {
+  const resetInputs = ():void => {
     reset({ code1: "", code2: "", code3: "", code4: "", code5: "", code6: "" });
   };
 
@@ -80,7 +80,7 @@ const LoginCode = () => {
                       className={error? "input_code_error": watch(input) ? "input_code2": "input_code"}
                       key={input}
                       {...register(input, {
-                        required: { value: true, message: ""}})}
+                        required: { value: true, message: "Pleace fill in all fields !"}})}
                       onInput={formatNumberInput} />
                     ))}
                   <CloseLogo className="clear_img_button"

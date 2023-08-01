@@ -1,8 +1,6 @@
-import { CreateSliceOptions, Slice } from "@reduxjs/toolkit";
-
 export interface LoginEmailPostData  {
    email: string;
-   languageID?:string;
+   languageID?: string;
 }
 
 export type DataLoginEmail = {
@@ -19,18 +17,3 @@ export type ReducersData = {
    loading: boolean;
    error: null | object,
 }
-
-
-// export type LoginEmailReducer {
-//    data: {};
-//    loading: boolean;
-//    error: null;
-// }, {}, "loginEmail">(Option: CreateSliceOptions<{
-//    data: {};
-//    loading: boolean;
-//    error: null;
-// }, {}, "loginEmail">): Slice<{
-//    data: {};
-//    loading: boolean;
-//    error: null;
-// }, {}, "loginEmail">

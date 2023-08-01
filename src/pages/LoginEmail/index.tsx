@@ -26,7 +26,7 @@ const LoginEmail = () => {
     dispatch(fetchLoginEmail(data))
     .unwrap()
     .then(() => {
-      navigate(CODE, { state: data });
+      navigate(CODE, { state: data, replace:true });
       reset();
     })
     .catch(() => {
