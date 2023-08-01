@@ -16,8 +16,6 @@ import { GeneralInfoData } from "../../../../types/GeneralInfo";
 
 const GeneralInfo = () => {
   const {data, error} = useSelector(selectMyProfile);
-  // console.log(data, "data")
-  // console.log(error, "error")
 
   const adapter = new AdapterDayjs();
   const dispatch = useDispatch();

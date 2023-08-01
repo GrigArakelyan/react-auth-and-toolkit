@@ -12,6 +12,7 @@ import { selectCodeData } from "../../store/selectores/CodeSelector";
 import { DASHBOARD } from "../../constants/router";
 import { formatNumberInput } from "../../helpers/input";
 import { LoginCodePostData } from "../../types/LoginCode";
+import { LoginEmailPostData } from "../../types/LoginEmail";
 
 const LoginCode = () => {
   const {error, loading} = useSelector(selectCodeData);
