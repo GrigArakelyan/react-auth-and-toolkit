@@ -10,6 +10,7 @@ import TimePickerEnd from '../../../../../Components/TimePickerEnd';
 import TimePickerStart from '../../../../../Components/TimePickerStart';
 import { AddWorkTime } from "../../../../../constants/WorkLogs";
 import { Controller, useForm } from 'react-hook-form';
+import { PostWorkTime } from '../../../../../types/WorkLog';
 
 
 const ModalWorkLogs = ({openModal, handleOpen, dayId, setOpenModal, addOrRefreshTime, id}:{
@@ -33,11 +34,12 @@ const ModalWorkLogs = ({openModal, handleOpen, dayId, setOpenModal, addOrRefresh
           id:dayId,
           startTime:`${new Date(postTime?.startTime).getHours()}:${new Date(postTime?.startTime).getMinutes()}`,
           endTime:`${new Date(postTime?.endTime).getHours()}:${new Date(postTime?.endTime).getMinutes()}`
-      }))
+      }));
+console.log(postTime)
       postTime?.startTime & postTime?.endTime && setOpenModal(false)
   };
 
-  const refreshTime = (timeId:any) => (postTime:any) => {
+  const refreshTime = (timeId:number) => (postTime:any) => {
     postTime?.startTime & postTime?.endTime && 
       dispatch(refreshWorkTime({
         id: timeId,

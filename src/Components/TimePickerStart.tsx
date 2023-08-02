@@ -10,7 +10,7 @@ const TimePickerStart = ({onChange}:{onChange:any}) => {
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DemoContainer components={['TimePicker']}>
         <TimePicker label="Start" 
-        onChange={onChange}
+          onChange={onChange}
         />
       </DemoContainer>
     </LocalizationProvider>
