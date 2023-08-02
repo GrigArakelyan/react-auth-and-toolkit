@@ -2,7 +2,7 @@ import "./LoginCode.scss";
 import loginimg from "../../img/loginImg.png";
 import {ReactComponent as CloseLogo} from "../../img/icons/Close.svg"
 import {ReactComponent as ErrorLogo} from "../../img/icons/ErrorOutline.svg"
-import { useForm } from "react-hook-form";
+import { UseFormHandleSubmit, useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -11,8 +11,7 @@ import { fetchLoginCode } from "../../store/slices/loginCode/LoginCodeThunk";
 import { selectCodeData } from "../../store/selectores/CodeSelector";
 import { DASHBOARD } from "../../constants/router";
 import { formatNumberInput } from "../../helpers/input";
-import { LoginCodePostData } from "../../types/LoginCode";
-import { LoginEmailPostData } from "../../types/LoginEmail";
+import { LoginCodeInputsChange, LoginCodePostData } from "../../types/LoginCode";
 
 const LoginCode:FC = () => {
   const {error, loading} = useSelector(selectCodeData);
@@ -26,7 +25,7 @@ const LoginCode:FC = () => {
 
   const inputs: string[] = ["code1", "code2", "code3", "code4", "code5", "code6"];
 
-  const postCode = (data:any):void => {
+  const postCode = (data: LoginCodeInputsChange):void => {
     const userLoginObj:LoginCodePostData = {
       ...state,
       code:
@@ -56,7 +55,7 @@ const LoginCode:FC = () => {
         </div>
         <div className="login_code-right">
           <div className="login_code">
-            <form className="login_code_item" onSubmit={handleSubmit(loading ? ()=>{} : postCode)}>
+            <form className="login_code_item" onSubmit={handleSubmit((loading ? ()=>{} : postCode) as any)}>
               <h2 className="h2_code">Login</h2>
                 {error != null && (
                   <div className="error">
