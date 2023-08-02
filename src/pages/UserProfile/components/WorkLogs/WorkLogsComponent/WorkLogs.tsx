@@ -6,10 +6,10 @@ import {removeWorkTime} from "../../../../../store/slices/WorkLogs/WorkLogsSlice
 import { useDispatch } from "react-redux";
 import ModalWorkLogs from "../ModalWorkLogs/Modal";
 import { AddWorkTime, UpdateWorkTime } from "../../../../../constants/WorkLogs";
-import React, { FC } from "react";
-import { WorkDayType } from "../../../../../types/WorkLog";
+import React from "react";
+import { WorkDayType, WorkTimesType } from "../../../../../types/WorkLog";
 
-const WorkLogsComponent:FC = ({day}:any) => {
+const WorkLogsComponent: ({ day }:{day: WorkDayType}) => React.JSX.Element = ({day}) => {
    const dispatch = useDispatch();
    const [id, setId] = useState(Number);
    const [addOrRefreshTime, setAddOrRefreshTime] = useState<string>("Select the hours");
@@ -33,7 +33,7 @@ const WorkLogsComponent:FC = ({day}:any) => {
    return(
       <div className="work_column">
          <h5 className="week_title">{day.title}</h5>
-         {(day.workTime).map((times:any) => 
+         {(day.workTime).map((times:WorkTimesType) => 
             <div key={times.id} className="work_div">
                <span className="work_div_title">start/ end time</span>
                <div className="work_time_div">

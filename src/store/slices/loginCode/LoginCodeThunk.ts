@@ -1,9 +1,12 @@
-import { AsyncThunk, createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk } from "@reduxjs/toolkit";
 import { postLoginCode } from "../../../services/login";
 import { setRefreshToken, setToken } from "../../../services/token";
 import { LoginCodePostData } from "../../../types/LoginCode";
+import { FetchType } from "../../../types/Reducers";
 
-export const fetchLoginCode: any = createAsyncThunk(
+
+
+export const fetchLoginCode:any = createAsyncThunk<FetchType, LoginCodePostData>(
   "loginCode/fetchLoginCode",
   async (userLoginObj:LoginCodePostData, { rejectWithValue }) => {
     return postLoginCode(userLoginObj)

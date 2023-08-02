@@ -1,5 +1,7 @@
 import { Slice, createSlice } from "@reduxjs/toolkit";
 import { fetchMyProfile } from "./MyProfileThunk";
+import { State } from "../../../types/Reducers";
+import { ActionMyProfile, ActionMyProfileError } from "../../../types/MyProfile";
 
 const MyProfileReducer:Slice = createSlice({
   name: "myProfile",
@@ -9,7 +11,7 @@ const MyProfileReducer:Slice = createSlice({
     error: null,
   },
   reducers: {
-    changeGeneralInfo(state, action){
+    changeGeneralInfo(state:State, action){
       state.data = {
         absences: action.payload.absences,
         dateOfBirth: action.payload.dateOfBirth,
@@ -24,22 +26,22 @@ const MyProfileReducer:Slice = createSlice({
         email: action.payload.email
       }
     },
-    clearData(state, action){
+    clearData(state:State, action:ActionMyProfile){
       state.data = action.payload
     }
   },
   extraReducers: {
-    [fetchMyProfile.pending]: (state) => {
+    [fetchMyProfile.pending]: (state:State) => {
       state.loading = true;
     },
-    [fetchMyProfile.fulfilled]: (state, { payload }) => {
+    [fetchMyProfile.fulfilled]: (state:State, action:ActionMyProfile) => {
       state.loading = false;
-      state.data = payload;
+      state.data = action.payload;
       state.error = null;
     },
-    [fetchMyProfile.rejected]: (state, { payload }) => {
+    [fetchMyProfile.rejected]: (state:State, action:ActionMyProfileError) => {
       state.loading = false;
-      state.error = payload;
+      state.error = action.payload;
     },
   },
 });

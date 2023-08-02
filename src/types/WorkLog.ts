@@ -20,3 +20,17 @@ export type WorkTimesType = {
   id:number;
   time: string
 };
+
+
+export type StateWorkLogs = {
+  data:WorkLogType;
+  loading: boolean;
+  error: null | string;
+}
+export type ActionWorkLogs = {
+  payload: {
+    id:number;
+    startTime?: string | undefined; 
+    endTime?:string | undefined;
+  }
+}

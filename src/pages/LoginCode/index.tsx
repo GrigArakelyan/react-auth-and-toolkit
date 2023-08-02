@@ -26,7 +26,7 @@ const LoginCode:FC = () => {
 
   const inputs: string[] = ["code1", "code2", "code3", "code4", "code5", "code6"];
 
-  const postCode = (data:any) => {
+  const postCode = (data:any):void => {
     const userLoginObj:LoginCodePostData = {
       ...state,
       code:

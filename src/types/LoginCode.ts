@@ -12,3 +12,9 @@ export interface LoginCodeInputsChange {
    code5?: string;
    code6?: string;
 }
+export type ActionLoginCode = {
+   payload: string ;
+ }
+
+
+
