@@ -21,15 +21,11 @@ export type WorkTimesType = {
   time: string
 };
 
-
-
 // export type PostWorkTime = {
 //   id: number;
 //   startTime: undefined | object;
 //   endTime: undefined | object;
 // }
-
-
 
 export type StateWorkLogs = {
   data:WorkLogType;
