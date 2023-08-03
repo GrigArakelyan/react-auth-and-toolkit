@@ -16,7 +16,7 @@ const ModalWorkLogs = ({openModal, handleOpen, dayId, setOpenModal, addOrRefresh
   openModal:boolean;
   handleOpen:any;
   dayId:number;
-  setOpenModal:any;
+  setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
   addOrRefreshTime:string;
   id:number;
 }) => {

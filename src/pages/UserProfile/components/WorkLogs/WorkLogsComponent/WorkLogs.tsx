@@ -11,7 +11,7 @@ import { WorkDayType, WorkTimesType } from "../../../../../types/WorkLog";
 
 const WorkLogsComponent: ({ day }:{day: WorkDayType}) => React.JSX.Element = ({day}) => {
    const dispatch = useDispatch();
-   const [id, setId] = useState(Number);
+   const [id, setId] = useState<number>(NaN);
    const [addOrRefreshTime, setAddOrRefreshTime] = useState<string>("Select the hours");
    const [openModal, setOpenModal] = useState<boolean>(false);
 

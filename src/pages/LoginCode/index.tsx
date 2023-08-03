@@ -2,7 +2,7 @@ import "./LoginCode.scss";
 import loginimg from "../../img/loginImg.png";
 import {ReactComponent as CloseLogo} from "../../img/icons/Close.svg"
 import {ReactComponent as ErrorLogo} from "../../img/icons/ErrorOutline.svg"
-import { UseFormHandleSubmit, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import React, { FC } from "react";
