@@ -13,7 +13,7 @@ export interface IFormData {
    email:string;
 }
 
-export type ReducersData = {
+export interface ReducersData  {
    data: {};
    loading: boolean;
    error: null | object,
