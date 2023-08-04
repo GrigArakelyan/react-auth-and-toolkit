@@ -13,7 +13,7 @@ import { LoginCodeInputsChange, LoginCodePostData } from "../../types/LoginCode"
 import { useAppDispatch } from "../../hook/useAppDispatch";
 import { useAppSelector } from "../../hook/useAppSelector";
 import Button from "../../Components/Button/Button";
-import Input from "../../Components/Inputs/Input";
+import Input from "../../Components/Input/Input";
 import { IFormData } from "../../types/LoginEmail";
 
 const LoginCode:FC = () => {
@@ -81,14 +81,14 @@ const LoginCode:FC = () => {
                 </span>
                 <div className="input_code_div">
                   {inputs.map((inputName) => (
-                    <Input key={inputName}
+                    <Input key={inputName} className={error? "input_code_error": watch<any>(inputName) ? "input_code2": "input_code"}
                       type={"text"}
                       register={register}
                       name={inputName}
                       required = {true}
                       onInput={formatNumberInput}
                       maxLength={1}
-                      className={error? "input_code_error": watch<any>(inputName) ? "input_code2": "input_code"}/>
+                      />
                     ))}
                   <CloseLogo className="clear_img_button"
                     onClick={resetInputs}

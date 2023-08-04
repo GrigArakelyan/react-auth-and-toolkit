@@ -12,7 +12,7 @@ import React, { FC } from "react";
 import { GeneralInfoData } from "../../../../types/GeneralInfo";
 import { useAppDispatch } from "../../../../hook/useAppDispatch";
 import { useAppSelector } from "../../../../hook/useAppSelector";
-import Input from "../../../../Components/Inputs/Input";
+import Input from "../../../../Components/Input/Input";
 import  Button  from "../../../../Components/Button/Button";
 
 

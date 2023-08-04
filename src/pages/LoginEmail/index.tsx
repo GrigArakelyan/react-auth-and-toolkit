@@ -12,7 +12,7 @@ import { LoginEmailPostData, DataLoginEmail, IFormData } from "../../types/Login
 import { useAppDispatch } from "../../hook/useAppDispatch";
 import { useAppSelector } from "../../hook/useAppSelector";
 import Button from "../../Components/Button/Button";
-import Input from "../../Components/Inputs/Input";
+import Input from "../../Components/Input/Input";
 
 
 const LoginEmail:FC = () => {
