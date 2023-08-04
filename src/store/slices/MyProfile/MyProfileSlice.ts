@@ -1,17 +1,12 @@
 import { Slice, createSlice } from "@reduxjs/toolkit";
 import { fetchMyProfile } from "./MyProfileThunk";
-import { State } from "../../../types/Reducers";
-import { ActionMyProfile, ActionMyProfileError } from "../../../types/MyProfile";
+import initialState from "./initialState";
 
-const MyProfileReducer:Slice = createSlice({
+const MyProfileReducer = createSlice({
   name: "myProfile",
-  initialState: {
-    data: {},
-    loading: false,
-    error: null,
-  },
+  initialState: initialState,
   reducers: {
-    changeGeneralInfo(state:State, action){
+    changeGeneralInfo(state, action){
       state.data = {
         absences: action.payload.absences,
         dateOfBirth: action.payload.dateOfBirth,
@@ -26,23 +21,24 @@ const MyProfileReducer:Slice = createSlice({
         email: action.payload.email
       }
     },
-    clearData(state:State, action:ActionMyProfile){
+    clearData(state, action){
       state.data = action.payload
     }
   },
-  extraReducers: {
-    [fetchMyProfile.pending]: (state:State) => {
+  extraReducers: (builder) => {
+    builder
+    .addCase(fetchMyProfile.pending, (state) => {
       state.loading = true;
-    },
-    [fetchMyProfile.fulfilled]: (state:State, action:ActionMyProfile) => {
+    })
+    .addCase(fetchMyProfile.fulfilled, (state, action) => {
       state.loading = false;
       state.data = action.payload;
-      state.error = null;
-    },
-    [fetchMyProfile.rejected]: (state:State, action:ActionMyProfileError) => {
+      state.error = "";
+    })
+    .addCase(fetchMyProfile.rejected, (state, {payload}) => {
       state.loading = false;
-      state.error = action.payload;
-    },
+      state.error = payload;
+    })
   },
 });
 

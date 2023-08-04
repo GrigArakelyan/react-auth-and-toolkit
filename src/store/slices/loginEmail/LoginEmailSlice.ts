@@ -1,29 +1,25 @@
-import { Slice, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { fetchLoginEmail } from "./LoginEmailThunk";
-import { State } from "../../../types/Reducers";
-import { ActionLoginEmailFulfiled, ActionLoginEmailRejected } from "../../../types/LoginEmail";
+import initialState from "./InitialState";
 
-const LoginEmailReducer:Slice = createSlice({
+const LoginEmailReducer = createSlice({
   name: "loginEmail",
-  initialState: {
-    data: {},
-    loading: false,
-    error: null,
-  },
+  initialState: initialState,
   reducers: {},
-  extraReducers: {
-    [fetchLoginEmail.pending]: (state:State):void => {
+  extraReducers: (builder) => {
+    builder
+    .addCase(fetchLoginEmail.pending, (state) => {
       state.loading = true;
-    },
-    [fetchLoginEmail.fulfilled]: (state:State, action:ActionLoginEmailFulfiled):void => {
-      state.data = action.payload;
+    })
+    .addCase(fetchLoginEmail.fulfilled, (state, {payload}) => {
+      state.data = {};
       state.loading = false;
-      state.error = null;
-    },
-    [fetchLoginEmail.rejected]: (state:State, action:ActionLoginEmailRejected):void => {
+      state.error = "";
+    })
+    .addCase(fetchLoginEmail.rejected, (state, action) => {
       state.error = action.payload;
       state.loading = false;
-    },
+    })
   },
 });
 

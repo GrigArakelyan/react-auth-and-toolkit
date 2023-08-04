@@ -1,1 +1,3 @@
-export const selectWorkLogs = ({ workLogs }:any) => workLogs.data;
+import { RootState } from "../store";
+
+export const selectWorkLogs = ({ workLogs }:RootState) => workLogs.data;

@@ -4,13 +4,13 @@ import userPageImg from "../../img/userpageimg.png";
 import { useNavigate } from "react-router";
 import { HOME, USER_PROFILE } from "../../constants/router";
 import { removeRefreshToken, removeToken } from "../../services/token";
-import { useDispatch } from "react-redux";
 import { removeTokenRed } from "../../store/slices/loginCode/LoginCodeSlice";
 import { clearData } from "../../store/slices/MyProfile/MyProfileSlice";
+import { useAppDispatch } from "../../hook/useAppDispatch";
 
 const UserPage:FC = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const myProfilePage = ():void => {
     navigate(USER_PROFILE);
@@ -20,7 +20,7 @@ const UserPage:FC = () => {
   const logout = ():void => {
     removeToken();
     removeRefreshToken();
-    dispatch(removeTokenRed({}));
+    dispatch(removeTokenRed());
     dispatch(clearData({}));
     navigate(HOME, {replace: true});
   };

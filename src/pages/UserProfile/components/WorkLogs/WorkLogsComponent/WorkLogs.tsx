@@ -1,30 +1,31 @@
 import {ReactComponent as RemoveLogo} from "../../../../../img/icons/Close.svg"
 import {ReactComponent as TimeLogo} from "../../../../../img/icons/QueryBuilder.svg"
 import {ReactComponent as AddLogo} from "../../../../../img/icons/Add.svg"
-import { useState } from "react";
+import { FC, useState } from "react";
 import {removeWorkTime} from "../../../../../store/slices/WorkLogs/WorkLogsSlice";
-import { useDispatch } from "react-redux";
 import ModalWorkLogs from "../ModalWorkLogs/Modal";
 import { AddWorkTime, UpdateWorkTime } from "../../../../../constants/WorkLogs";
 import React from "react";
 import { WorkDayType, WorkTimesType } from "../../../../../types/WorkLog";
-
-const WorkLogsComponent: ({ day }:{day: WorkDayType}) => React.JSX.Element = ({day}) => {
-   const dispatch = useDispatch();
+import { useAppDispatch } from "../../../../../hook/useAppDispatch";
+// ({ day }:{day: WorkDayType}) => React.JSX.Element
+// FC<WorkDayType>
+const WorkLogsComponent:({ day }:{day: WorkDayType}) => React.JSX.Element  = ({day}) => {
+   const dispatch = useAppDispatch();
    const [id, setId] = useState<number>(NaN);
    const [addOrRefreshTime, setAddOrRefreshTime] = useState<string>("Select the hours");
    const [openModal, setOpenModal] = useState<boolean>(false);
 
-   const handleOpenAddTime = ():void => {
+   const handleOpenAddTime = () => ():void => {
       setOpenModal(true)
       setAddOrRefreshTime(AddWorkTime)
    };
-   const handleOpenRefreshTime = (id:number):void => {
+   const handleOpenRefreshTime = (id:number) => ():void => {
       setId(id)
       setOpenModal(true)
       setAddOrRefreshTime(UpdateWorkTime)
    };
-   const removeTime = (id:number):void => {    
+   const removeTime = (id:number) => ():void => {    
       dispatch(removeWorkTime({
         id: id
       }))
@@ -40,15 +41,15 @@ const WorkLogsComponent: ({ day }:{day: WorkDayType}) => React.JSX.Element = ({d
                   <p className="input_time">{times.time}</p>
                   <div className="work_icons"> 
                      <RemoveLogo className="work_icon" 
-                        onClick={() => removeTime(times.id)}/>
+                        onClick={removeTime(times.id)}/>
                      <TimeLogo className="work_icon" 
-                        onClick={() => handleOpenRefreshTime(times.id)}/>
+                        onClick={handleOpenRefreshTime(times.id)}/>
                   </div>
                </div>
             </div>
          )}
          <div className="add_div"
-            onClick={() => handleOpenAddTime()}>
+            onClick={handleOpenAddTime()}>
             <AddLogo className="add_icon" />
          </div>
          {openModal && (

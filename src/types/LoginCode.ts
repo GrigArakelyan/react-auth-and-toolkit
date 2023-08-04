@@ -14,9 +14,5 @@ export interface LoginCodeInputsChange
    code6: string
 }
 
-export type ActionLoginCode = {
-   payload: string ;
- }
-
 
 

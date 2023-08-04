@@ -1,38 +1,50 @@
-import { Slice, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { fetchLoginCode } from "./LoginCodeThunk";
-import { State } from "../../../types/Reducers";
-import { ActionLoginCode } from "../../../types/LoginCode";
+import initialState from "./initialState";
 
 
-const LoginCodeReducer:Slice = createSlice({
+const LoginCodeReducer = createSlice({
   name: "loginCode",
-  initialState: {
-    data: {},
-    loading: false,
-    error: null,
-  },
+  initialState: initialState,
   reducers: {
-    removeTokenRed(state:State):void{
+    removeTokenRed(state){
       state.data = {}
     }
   },
-  extraReducers: {
-    [fetchLoginCode.pending]: (state:State):void => {
-      state.loading = true;
-      state.error = null;
-      state.data = {}
-    },
-    [fetchLoginCode.fulfilled]: (state:State, action:ActionLoginCode):void => {
-      state.data = action;
+  extraReducers: (builder) => {
+    builder
+    .addCase(fetchLoginCode.pending, (state) => {
+      state.loading = true
+    })
+    .addCase(fetchLoginCode.fulfilled, (state, {payload}) => {
+      state.data = payload;
       state.loading = false;
-      state.error = null;
-    },
-    [fetchLoginCode.rejected]: (state:State, action:ActionLoginCode):void => {
-      state.error = action.payload;
+      state.error = '';
+    })
+    .addCase(fetchLoginCode.rejected, (state, {payload}) => {
+      state.error = payload;
       state.loading = false;
-      state.data = {};
-    },
-  },
+    })
+  }
 });
 export default LoginCodeReducer.reducer;
 export const {removeTokenRed} = LoginCodeReducer.actions
+
+
+  // {
+  //   [fetchLoginCode.pending]: (state) => {
+      // state.loading = true;
+      // state.error = null;
+      // state.data = {}
+  //   },
+  //   [fetchLoginCode.fulfilled]: (state, action) => {
+      // state.data = action;
+      // state.loading = false;
+      // state.error = null;
+  //   },
+  //   [fetchLoginCode.rejected]: (state, action) => {
+      // state.error = action.payload;
+      // state.loading = false;
+      // state.data = {};
+  //   },
+  // },

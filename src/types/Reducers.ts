@@ -1,39 +1,13 @@
-import { WorkLogType } from "./WorkLog";
+import { GeneralInfoData } from "./GeneralInfo";
 
-export type Store = {
-  loginEmail: {
-      data: {};
-      loading: boolean;
-      error: null;
-  };
-  loginCode: {
-      data: {};
-      status: null;
-      loading: boolean;
-      error: null;
-  };
-  myProfile: {
-      data: {};
-      status: null;
-      loading: boolean;
-      error: null;
-  };
-  workLogs:{
-      data: WorkLogType;
-      status: null;
-      loading: boolean;
-      error: null;
-  };
+export interface InitialState {
+  data: object;
+  loading: boolean;
+  error: string | undefined;
 }
-export type State = {
-   data: object;
-   loading: boolean;
-   error: null | string  
- }
 
-export type FetchType = {
-   pending: any;
-   fulfilled: any;
-   rejected: any;
- }
-
+export interface InitialStateGeneralInfo {
+  data: GeneralInfoData;
+  loading: boolean;
+  error: string | undefined;
+}

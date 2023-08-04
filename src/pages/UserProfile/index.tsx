@@ -6,18 +6,18 @@ import "./UserProfile.scss";
 import React, {FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectMyProfile } from "../../store/selectores/MyProfileSelector";
-import { DataLoginEmail } from "../../types/LoginEmail";
+import { useAppDispatch } from "../../hook/useAppDispatch";
 
 const UserProfile:FC = () => {
-  const dispatch = useDispatch();
-  const data:DataLoginEmail = useSelector(selectMyProfile);
+  const dispatch = useAppDispatch();
+  const data = useSelector(selectMyProfile);
 
-  useEffect(():void => {
+  useEffect(() => {
     dispatch(fetchMyProfile())
       .unwrap()
       .then(() => {})
       .catch(() => {});
-  }, [dispatch]);
+  }, []);
 
 
   return (

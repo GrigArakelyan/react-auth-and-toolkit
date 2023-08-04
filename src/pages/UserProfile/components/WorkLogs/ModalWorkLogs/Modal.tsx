@@ -5,11 +5,11 @@ import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import "../ModalWorkLogs/ModalWorkLogs.scss"
 import { addWorkTime, refreshWorkTime } from '../../../../../store/slices/WorkLogs/WorkLogsSlice';
-import { useDispatch } from 'react-redux';
 import TimePickerEnd from '../../../../../Components/TimePickerEnd';
 import TimePickerStart from '../../../../../Components/TimePickerStart';
 import { AddWorkTime } from "../../../../../constants/WorkLogs";
 import { Controller, useForm } from 'react-hook-form';
+import { useAppDispatch } from '../../../../../hook/useAppDispatch';
 
 
 const ModalWorkLogs = ({openModal, handleOpen, dayId, setOpenModal, addOrRefreshTime, id}:{
@@ -18,9 +18,9 @@ const ModalWorkLogs = ({openModal, handleOpen, dayId, setOpenModal, addOrRefresh
   dayId:number;
   setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
   addOrRefreshTime:string;
-  id:number;
+  id:number ;
 }) => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const {handleSubmit, control } = useForm();
 
   const handleClose = () => {

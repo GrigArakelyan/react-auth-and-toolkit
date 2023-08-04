@@ -1,5 +1,4 @@
 import "./GeneralInfo.scss";
-import { useSelector } from "react-redux/es/hooks/useSelector";
 import { selectMyProfile } from "../../../../store/selectores/MyProfileSelector";
 import { Controller, useForm } from "react-hook-form";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -7,19 +6,21 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import GitHubIcon from "../../../../img/github.png";
 import SlackIcon from "../../../../img/slack.png";
-import { useDispatch } from "react-redux";
 import { changeGeneralInfo } from "../../../../store/slices/MyProfile/MyProfileSlice";
 import { formatNumberInput } from "../../../../helpers/input";
 import React, { FC } from "react";
 import { GeneralInfoData } from "../../../../types/GeneralInfo";
+import { useAppDispatch } from "../../../../hook/useAppDispatch";
+import { useAppSelector } from "../../../../hook/useAppSelector";
+import { Dayjs } from "dayjs";
 
 
 const GeneralInfo:FC = () => {
-  const {data, error} = useSelector(selectMyProfile);
+  const {data, error} = useAppSelector(selectMyProfile);
 
   const adapter = new AdapterDayjs();
-  const dispatch = useDispatch();
-  const { register, control, formState:{errors, isDirty }, handleSubmit} = useForm(
+  const dispatch = useAppDispatch();
+  const { register, control, formState:{errors, isDirty }, handleSubmit} = useForm<GeneralInfoData>(
     {defaultValues: 
       { ...data,
         firstName: data?.firstName,
@@ -34,11 +35,11 @@ const GeneralInfo:FC = () => {
         gitHubUserName:data?.gitHubUserName }
     })
 
-  const postUserData = (postData:GeneralInfoData):void => {
+  const postUserData = (postData:GeneralInfoData) => {
     postData = {
       ...postData, 
-      dateOfBirth: new Date(postData?.dateOfBirth).toISOString(),
-      startDate: new Date(postData?.startDate).toISOString(),
+      dateOfBirth: new Dayjs(postData.dateOfBirth),
+      startDate: new Dayjs(postData.startDate),
       email: data?.email,
     }
     dispatch(changeGeneralInfo(postData));

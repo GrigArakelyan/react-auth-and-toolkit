@@ -1,8 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { getMyProfile } from "../../../services/login";
-import { FetchType } from "../../../types/Reducers";
+import { GeneralInfoData } from "../../../types/GeneralInfo";
 
-export const fetchMyProfile:any = createAsyncThunk<FetchType, void>(
+export const fetchMyProfile = createAsyncThunk<GeneralInfoData,undefined,{rejectValue: string | undefined}>(
   "myProfile/fetchMyProfile",
   async (_, { rejectWithValue }) => {
     return getMyProfile()

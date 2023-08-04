@@ -21,21 +21,8 @@ export type WorkTimesType = {
   time: string
 };
 
-// export type PostWorkTime = {
-//   id: number;
-//   startTime: undefined | object;
-//   endTime: undefined | object;
-// }
-
 export type StateWorkLogs = {
   data:WorkLogType;
   loading: boolean;
-  error: null | string;
-}
-export type ActionWorkLogs = {
-  payload: {
-    id:number;
-    startTime?: string | undefined; 
-    endTime?:string | undefined;
-  }
+  error: string;
 }

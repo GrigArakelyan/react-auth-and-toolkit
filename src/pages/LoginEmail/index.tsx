@@ -3,19 +3,20 @@ import {ReactComponent as ErrorLogo} from "../../img/icons/ErrorOutline.svg"
 import { useNavigate } from "react-router-dom";
 import loginimg from "../../img/loginImg.png";
 import "./LoginEmail.scss";
-import { useDispatch, useSelector } from "react-redux";
 import { fetchLoginEmail } from "../../store/slices/loginEmail/LoginEmailThunk";
 import { useForm } from "react-hook-form";
 import { selectEmailData } from "../../store/selectores/EmailSelector";
 import { CODE } from "../../constants/router";
 import { email } from "../../utils/validation";
 import { LoginEmailPostData, DataLoginEmail, IFormData } from "../../types/LoginEmail";
+import { useAppDispatch } from "../../hook/useAppDispatch";
+import { useAppSelector } from "../../hook/useAppSelector";
 
 
 const LoginEmail:FC = () => {
   const { register, formState: { errors }, handleSubmit, reset,} = useForm<IFormData>({mode: 'onChange'});
-  const data:DataLoginEmail = useSelector(selectEmailData);
-  const dispatch = useDispatch();
+  const data:DataLoginEmail = useAppSelector(selectEmailData);
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
     
   const postEmail = (data:LoginEmailPostData):void => {  
@@ -43,7 +44,7 @@ const LoginEmail:FC = () => {
         <form className="login_email_item"
           onSubmit={handleSubmit(!data.loading ? postEmail : () => {})}>
           <h2>Login</h2>
-          {data.error != null && (
+          {data.error && (
             <div className="error">
               <ErrorLogo className="error_logo"  />
               <p className="error_text">Write your e-mail adress</p>

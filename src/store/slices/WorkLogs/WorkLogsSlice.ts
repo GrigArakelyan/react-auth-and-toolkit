@@ -1,16 +1,12 @@
-import { Slice, createSlice } from "@reduxjs/toolkit";
-import { WeekData } from "../../../pages/UserProfile/components/WorkLogs/config";
-import { ActionWorkLogs, StateWorkLogs } from "../../../types/WorkLog";
+import { createSlice } from "@reduxjs/toolkit";
+import { StateWorkLogs } from "../../../types/WorkLog";
+import initialState from "./initialState";
 
-const WorkLogsReducer:Slice = createSlice({
+const WorkLogsReducer = createSlice({
   name: "workLogs",
-  initialState: {
-    data: WeekData,
-    loading: false,
-    error: null,
-  },
+  initialState: initialState,
   reducers: {
-    removeWorkTime(state:StateWorkLogs, action:ActionWorkLogs):void {
+    removeWorkTime(state, action) {
       state.data = state.data.map((day) => {
         return {...day, workTime: (day.workTime).filter((time) => {
             if(time.id === action.payload.id){
@@ -19,7 +15,7 @@ const WorkLogsReducer:Slice = createSlice({
             return time
         })}})
     },
-    refreshWorkTime(state:StateWorkLogs, action:ActionWorkLogs):void {
+    refreshWorkTime(state, action) {
       state.data = state.data.map((day) => {
         return {...day, workTime: (day.workTime).map((time) => {
             if (time.id === action.payload.id) {
@@ -30,7 +26,7 @@ const WorkLogsReducer:Slice = createSlice({
             return time;
         })}})
     },
-    addWorkTime(state:StateWorkLogs, action:ActionWorkLogs):void {
+    addWorkTime(state, action) {
       state.data = state.data.map((day) => {
         if (day.id === action.payload.id) {
           return {

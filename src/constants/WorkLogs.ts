@@ -1,2 +1,2 @@
-export const AddWorkTime:string = "Add new business hours";
-export const UpdateWorkTime:string = "Update business hours";
+export const AddWorkTime = "Add new business hours";
+export const UpdateWorkTime = "Update business hours";

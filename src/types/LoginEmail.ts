@@ -6,23 +6,9 @@ export interface LoginEmailPostData  {
 export type DataLoginEmail = {
    data: object;
    loading: boolean;
-   error: null | object,
+   error: string | undefined,
 }
 
 export interface IFormData {
    email:string;
-}
-
-export interface ReducersData  {
-   data: {};
-   loading: boolean;
-   error: null | object,
-}
-
-export type ActionLoginEmailFulfiled = {
-   payload: object;
-}
-
-export type ActionLoginEmailRejected = {
-   payload: null | string;
 }

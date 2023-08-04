@@ -1,12 +1,11 @@
-import { AnyAction, configureStore } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import LoginEmailSlice from "./slices/loginEmail/LoginEmailSlice";
 import MyProfileSlice from "./slices/MyProfile/MyProfileSlice";
 import WorkLogsSlice from "./slices/WorkLogs/WorkLogsSlice";
 import LoginCodeSlice from "./slices/loginCode/LoginCodeSlice";
-import { WorkLogType } from "../types/WorkLog";
-import { Store } from "../types/Reducers";
 
-export const store = configureStore<Store, AnyAction, []>({
+
+const store = configureStore({
   reducer: {
     loginEmail: LoginEmailSlice,
     loginCode: LoginCodeSlice,
@@ -15,3 +14,8 @@ export const store = configureStore<Store, AnyAction, []>({
   },
 });
 
+
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch
+
+export default store

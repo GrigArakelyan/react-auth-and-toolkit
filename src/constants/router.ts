@@ -1,5 +1,5 @@
-export const HOME:string = '/';
-export const CODE:string = '/code';
-export const USER:string = '/user';
-export const USER_PROFILE:string = '/user/profile';
-export const DASHBOARD:string = "/user/dashboard"
+export const HOME = '/';
+export const CODE = '/code';
+export const USER = '/user';
+export const USER_PROFILE = '/user/profile';
+export const DASHBOARD = "/user/dashboard"

@@ -1,1 +1,3 @@
-export const selectEmailData = ({ loginEmail }:any) => loginEmail;
+import { RootState } from "../store";
+
+export const selectEmailData = ({ loginEmail }:RootState) => loginEmail;

@@ -4,21 +4,22 @@ import {ReactComponent as CloseLogo} from "../../img/icons/Close.svg"
 import {ReactComponent as ErrorLogo} from "../../img/icons/ErrorOutline.svg"
 import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 import React, { FC } from "react";
 import { fetchLoginCode } from "../../store/slices/loginCode/LoginCodeThunk";
 import { selectCodeData } from "../../store/selectores/CodeSelector";
 import { DASHBOARD } from "../../constants/router";
 import { formatNumberInput } from "../../helpers/input";
 import { LoginCodeInputsChange, LoginCodePostData } from "../../types/LoginCode";
+import { useAppDispatch } from "../../hook/useAppDispatch";
+import { useAppSelector } from "../../hook/useAppSelector";
 
 const LoginCode:FC = () => {
-  const {error, loading} = useSelector(selectCodeData);
+  const {error, loading} = useAppSelector(selectCodeData);
   const { register, handleSubmit, watch, formState: { errors }, reset } = useForm({
     mode: "onChange",
   });
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const { state } = useLocation();
 
@@ -56,7 +57,7 @@ const LoginCode:FC = () => {
           <div className="login_code">
             <form className="login_code_item" onSubmit={handleSubmit((loading ? ()=>{} : postCode) as any)}>
               <h2 className="h2_code">Login</h2>
-                {error != null && (
+                {error && (
                   <div className="error">
                     <ErrorLogo className="error_logo" />
                     <p className="error_text">Please enter a valid code</p>
