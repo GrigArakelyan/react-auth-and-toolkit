@@ -12,10 +12,13 @@ import { formatNumberInput } from "../../helpers/input";
 import { LoginCodeInputsChange, LoginCodePostData } from "../../types/LoginCode";
 import { useAppDispatch } from "../../hook/useAppDispatch";
 import { useAppSelector } from "../../hook/useAppSelector";
+import Button from "../../Components/Button/Button";
+import Input from "../../Components/Inputs/Input";
+import { IFormData } from "../../types/LoginEmail";
 
 const LoginCode:FC = () => {
   const {error, loading} = useAppSelector(selectCodeData);
-  const { register, handleSubmit, watch, formState: { errors }, reset } = useForm({
+  const { register, handleSubmit, watch, formState: { errors }, reset } = useForm<IFormData>({
     mode: "onChange",
   });
 
@@ -36,16 +39,18 @@ const LoginCode:FC = () => {
         data.code5 +
         data.code6,
     };
-    dispatch(fetchLoginCode(userLoginObj))
+    if(userLoginObj.code && userLoginObj.email && userLoginObj.languageID){
+      dispatch(fetchLoginCode(userLoginObj))
       .unwrap()
       .then(() => {
         navigate(DASHBOARD);
       })
       .catch(() => {});
+    }
   };
 
   const resetInputs = ():void => {
-    reset({ code1: "", code2: "", code3: "", code4: "", code5: "", code6: "" });
+    reset();
   };
 
   return (
@@ -75,22 +80,26 @@ const LoginCode:FC = () => {
                   been sent to your email address / SMS
                 </span>
                 <div className="input_code_div">
-                  {inputs.map((input) => (
-                    <input type="text" maxLength={1}
-                      className={error? "input_code_error": watch(input) ? "input_code2": "input_code"}
-                      key={input}
-                      {...register(input, {
-                        required: { value: true, message: "Pleace fill in all fields !"}})}
-                      onInput={formatNumberInput} />
+                  {inputs.map((inputName) => (
+                    <Input key={inputName}
+                      type={"text"}
+                      register={register}
+                      name={inputName}
+                      required = {true}
+                      onInput={formatNumberInput}
+                      maxLength={1}
+                      className={error? "input_code_error": watch<any>(inputName) ? "input_code2": "input_code"}/>
                     ))}
                   <CloseLogo className="clear_img_button"
                     onClick={resetInputs}
                   />
                 </div>
               </div>
-              <button type="submit" className="button_code">
-                {loading ? "Loading..." : "Submit"}
-              </button>
+              <Button className={"button"}
+                text={loading ? "Loading..." : "Submit"}
+                type="submit"
+                onClick={handleSubmit((loading ? ()=>{} : postCode) as any)}
+              />
             </form>
           </div>
           <span className="span">

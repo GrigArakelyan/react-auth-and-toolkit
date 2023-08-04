@@ -1,9 +1,8 @@
-import { Dayjs } from "dayjs";
 
 export interface GeneralInfoData {
    absences?: number;
    appUserID?: string;
-   dateOfBirth?: Dayjs | null;
+   dateOfBirth?: any;
    email?: string;
    firstName?: string;
    gitHubUserName?: string;
@@ -15,7 +14,7 @@ export interface GeneralInfoData {
    name?: string;
    personalEmail?: string;
    slackUserName?: string;
-   startDate?: Dayjs | null;
+   startDate?: any;
    userCrmProfilePermission?: 
    {
       id: string;

@@ -1,0 +1,148 @@
+.input{
+  font-size: 17px;
+  height: 30px;
+  padding: 5px;
+  font-weight: 400;
+  border: none;
+  border-bottom: 2px solid;
+  border-color: #ebeeef;
+  &:focus {
+    outline: none;
+  border-bottom: 2px solid;
+  border-color: #003367;
+  }
+}
+.input_code_error{
+  width: 10%;
+  height: 33px;
+  font-size: 20px;
+  margin: 20px auto;
+  padding: 5px 3px;
+  font-weight: 400;
+  line-height: 20px;
+  align-items: center;
+  letter-spacing: 0.5px;
+  border: none;
+  border-bottom: 2px solid;
+  border-color: #af2727;
+  text-align: center;
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid;
+    border-color: #af2727;
+  }
+}
+.input_code2{
+  width: 10%;
+  height: 33px;
+  font-size: 20px;
+  margin: 20px auto;
+  padding: 5px 3px;
+  font-weight: 400;
+  line-height: 20px;
+  align-items: center;
+  letter-spacing: 0.5px;
+  border: none;
+  border-bottom: 2px solid;
+  border-color: #003367;
+  text-align: center;
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid;
+    border-color: #003367;
+  }
+}
+
+.input_code{
+  width: 10%;
+  height: 33px;
+  font-size: 20px;
+  margin: 20px auto;
+  padding: 5px 3px;
+  font-weight: 400;
+  line-height: 20px;
+  align-items: center;
+  letter-spacing: 0.5px;
+  border: none;
+  border-bottom: 2px solid;
+  border-color: #ebeeef;
+  text-align: center;
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid;
+    border-color: #003367;
+  }
+}
+
+
+.error{
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-bottom: 1px groove;
+  border-color: #af2727;
+  padding: 3px;
+}
+.input_column_1{
+  border: none;
+  outline: none;
+  border-bottom: 1px groove;
+  font-size: 16px;
+  border-color: #ebeeef;
+  padding: 3px;
+  &:focus {
+    border: none;
+    outline: none;
+    border-bottom: 1px groove;
+    border-color: #ebeeef;
+  }
+}
+.input_column_2{
+  border: none;
+  border-bottom: 1px groove;
+  outline: none;
+  font-size: 16px;
+  border-color: #ebeeef;
+  padding: 3px;
+  &:focus {
+    border: none;
+    border-bottom: 1px groove;
+    outline: none;
+    border-color: #ebeeef;
+  }
+}
+.input_column_phone{
+  width: 25%;
+  border: none;
+  border-bottom: 1px groove;
+  outline: none;
+  font-size: 16px;
+  border-color: #ebeeef;
+  padding: 3px 0;
+  margin: 30.5px 10px 8px 0 ;
+}
+.input_checkbox{
+  padding: 10px;
+  height: 19px;
+  width: 19px;
+  background-color: blue;
+}
+.error_account{
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-bottom: 1px groove;
+  border-color: #af2727;
+  padding: 5px 5px 5px 33px;
+  margin-top: 10px;
+}
+.input_account{
+  border: none;
+  outline: none;
+  border-bottom: 1px groove;
+  border-color: #ebeeef;
+  font-size: 16px;
+  padding: 5px 5px 5px 33px;
+  margin-top: 10px;
+}
+
