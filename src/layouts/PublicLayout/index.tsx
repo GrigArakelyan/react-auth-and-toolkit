@@ -3,9 +3,8 @@ import { Outlet } from "react-router"
 
 const PublicLayout:FC = () => {
 
-   return (
-      <Outlet />
-   ) 
+   return <Outlet />
+   
 }
 
 export default PublicLayout

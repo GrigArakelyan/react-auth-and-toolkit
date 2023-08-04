@@ -18,7 +18,7 @@ const App:FC = () => {
       <Routes>
         <Route path={HOME} element={<PublicRoute />}>
           <Route path={HOME} element={<PublicLayout />}>
-            <Route path={HOME}  element={<LoginEmail/>}/>
+            <Route index  element={<LoginEmail/>}/>
             <Route path={CODE} element={<LoginCode/>}/>
           </Route>
         </Route>

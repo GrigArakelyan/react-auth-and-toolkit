@@ -97,7 +97,7 @@ const LoginCode:FC = () => {
               </div>
               <Button className={"button"}
                 text={loading ? "Loading..." : "Submit"}
-                type="submit"
+                type="button"
                 onClick={handleSubmit((loading ? ()=>{} : postCode) as any)}
               />
             </form>

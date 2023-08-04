@@ -7,6 +7,7 @@ import { removeRefreshToken, removeToken } from "../../services/token";
 import { removeTokenRed } from "../../store/slices/loginCode/LoginCodeSlice";
 import { clearData } from "../../store/slices/MyProfile/MyProfileSlice";
 import { useAppDispatch } from "../../hook/useAppDispatch";
+import Button from "../../Components/Button/Button";
 
 const UserPage:FC = () => {
   const navigate = useNavigate();
@@ -29,12 +30,17 @@ const UserPage:FC = () => {
     <div className="user_page_content">
       <img src={userPageImg} className="user_page_img" alt="img"/>
       <h2 className="h2_title">COMING SOON</h2>
-      <button className="edit_profile_button" onClick={myProfilePage}>
+      <Button className={"edit_profile_button"}
+        text={"EDIT MY PROFILE AND MY WORKLOG"} type="button"
+        onClick={myProfilePage}/>
+      {/* <button className="edit_profile_button" onClick={myProfilePage}>
         EDIT MY PROFILE AND MY WORKLOG
-      </button>
-      <button className="logout_button" onClick={logout}>
+      </button> */}
+      <Button className={"logout_button"} type="button" 
+        text={"Lodout"} onClick={logout}/>
+      {/* <button className="logout_button" onClick={logout}>
         Logout
-      </button>
+      </button> */}
     </div>
   );
 };

@@ -20,10 +20,10 @@ interface Input {
    validation?: RegExp;
 }
 
-const Input:FC<Input> = ({name, register, value, validation, required, message, onInput, className, maxLength, key, type, placeholder, readonly}) => {
+const Input:FC<Input> = ({name, register, value, validation, required, message, onInput, className, maxLength, type, placeholder, readonly}) => {
 
 
-   return <input type={type} maxLength={maxLength} key={key}
+   return <input type={type} maxLength={maxLength}
       className={className} readOnly={readonly}
       placeholder={placeholder}
       {...register(name, {

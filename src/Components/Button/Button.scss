@@ -24,4 +24,45 @@
         font-size: 14px;
         background-color: #d1e1f0;
 }
+.edit_profile_button{
+        width: 20%;
+        border: none;
+        background-color: #003367;
+        padding: 10px 0;
+        border-radius: 4px;
+        color: White;
+        font-size: 14px;
+        letter-spacing: 1.25 px;
+        margin: 7px 0;
+     }
+     .logout_button{
+        width: 8%;
+        border: none;
+        background-color: #FFFFFF;
+        color: #003367;
+        border-radius: 4px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 1.25 px;
+        margin: 17px 0;
+        padding: 5px 0;
+     }
+
+@media screen and (max-width: 980px) {
+        .edit_profile_button{
+              width: 35%;
+        }
+        
+}
+     
+@media screen and (max-width: 600px) {
+        .edit_profile_button{
+              width: 50%;
+              margin: 5% auto;
+        }
+        .logout_button{
+              margin: 5% auto;
+        }
+}
 

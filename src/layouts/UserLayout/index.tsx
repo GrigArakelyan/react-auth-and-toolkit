@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 import React, { FC } from "react";
 
 const UserLayout:FC = () => {
-  const classActive = ({isActive}:any) => isActive ? "active" : "link" 
+  const classActive: (isActive: any) => string = ({isActive}) => isActive ? "active" : "link" 
 
   
   return (

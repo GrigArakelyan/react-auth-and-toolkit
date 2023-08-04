@@ -76,7 +76,7 @@ const LoginEmail:FC = () => {
           <Button className={"button"}
             text={(data.loading && "Loading...") || "Send Code"}
             onClick={handleSubmit(!data.loading ? postEmail : () => {})}
-            type={"submit"}
+            type={"button"}
             />
         </form>
       </div>
