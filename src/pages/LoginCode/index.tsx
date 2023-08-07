@@ -14,7 +14,6 @@ import { useAppDispatch } from "../../hook/useAppDispatch";
 import { useAppSelector } from "../../hook/useAppSelector";
 import Button from "../../Components/Button/Button";
 import Input from "../../Components/Input/Input";
-import { IFormData } from "../../types/LoginEmail";
 
 const LoginCode:FC = () => {
   const {error, loading} = useAppSelector(selectCodeData);
