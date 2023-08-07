@@ -1,6 +1,6 @@
 import GeneralInfo from "./components/GeneralInfo";
 import WorkLogs from "./components/WorkLogs/";
-import Loading from "../../Components/Loading";
+import Loading from "../../Components/Loadind/Loading";
 import { fetchMyProfile } from "../../store/slices/MyProfile/MyProfileThunk";
 import "./UserProfile.scss";
 import React, {FC, useEffect } from "react";

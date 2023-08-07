@@ -5,8 +5,8 @@ import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import "../ModalWorkLogs/ModalWorkLogs.scss"
 import { addWorkTime, refreshWorkTime } from '../../../../../store/slices/WorkLogs/WorkLogsSlice';
-import TimePickerEnd from '../../../../../Components/TimePickerEnd';
-import TimePickerStart from '../../../../../Components/TimePickerStart';
+import TimePickerEnd from '../../../../../Components/TimePicker/TimePickerEnd';
+import TimePickerStart from '../../../../../Components/TimePicker/TimePickerStart';
 import { AddWorkTime } from "../../../../../constants/WorkLogs";
 import { Controller, useForm } from 'react-hook-form';
 import { useAppDispatch } from '../../../../../hook/useAppDispatch';
