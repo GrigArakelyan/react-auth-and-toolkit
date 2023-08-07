@@ -1,4 +1,4 @@
-import { Slice, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { fetchMyProfile } from "./MyProfileThunk";
 import initialState from "./initialState";
 
@@ -30,9 +30,9 @@ const MyProfileReducer = createSlice({
     .addCase(fetchMyProfile.pending, (state) => {
       state.loading = true;
     })
-    .addCase(fetchMyProfile.fulfilled, (state, action) => {
+    .addCase(fetchMyProfile.fulfilled, (state, {payload}) => {
       state.loading = false;
-      state.data = action.payload;
+      state.data = payload;
       state.error = "";
     })
     .addCase(fetchMyProfile.rejected, (state, {payload}) => {

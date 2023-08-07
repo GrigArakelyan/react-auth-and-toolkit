@@ -6,35 +6,35 @@ const WorkLogsReducer = createSlice({
   name: "workLogs",
   initialState: initialState,
   reducers: {
-    removeWorkTime(state, action) {
+    removeWorkTime(state, {payload}) {
       state.data = state.data.map((day) => {
         return {...day, workTime: (day.workTime).filter((time) => {
-            if(time.id === action.payload.id){
-              return time.id !== action.payload.id
+            if(time.id === payload.id){
+              return time.id !== payload.id
             }
             return time
         })}})
     },
-    refreshWorkTime(state, action) {
+    refreshWorkTime(state, {payload}) {
       state.data = state.data.map((day) => {
         return {...day, workTime: (day.workTime).map((time) => {
-            if (time.id === action.payload.id) {
+            if (time.id === payload.id) {
               return {  
-                id: action.payload.id, 
-                time: `${action.payload.startTime} - ${action.payload.endTime} `
+                id: payload.id, 
+                time: `${payload.startTime} - ${payload.endTime} `
               }}
             return time;
         })}})
     },
-    addWorkTime(state, action) {
+    addWorkTime(state, {payload}) {
       state.data = state.data.map((day) => {
-        if (day.id === action.payload.id) {
+        if (day.id === payload.id) {
           return {
             ...day,
             workTime: [
               ...day.workTime,
               { id: Math.random(), 
-                time: `${action.payload.startTime} - ${action.payload.endTime}`, 
+                time: `${payload.startTime} - ${payload.endTime}`, 
               }]
           }}
         return day;

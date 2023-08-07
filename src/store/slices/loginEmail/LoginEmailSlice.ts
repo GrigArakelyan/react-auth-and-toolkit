@@ -11,13 +11,13 @@ const LoginEmailReducer = createSlice({
     .addCase(fetchLoginEmail.pending, (state) => {
       state.loading = true;
     })
-    .addCase(fetchLoginEmail.fulfilled, (state, {payload}) => {
+    .addCase(fetchLoginEmail.fulfilled, (state) => {
       state.data = {};
       state.loading = false;
       state.error = "";
     })
-    .addCase(fetchLoginEmail.rejected, (state, action) => {
-      state.error = action.payload;
+    .addCase(fetchLoginEmail.rejected, (state, {payload}) => {
+      state.error = payload;
       state.loading = false;
     })
   },

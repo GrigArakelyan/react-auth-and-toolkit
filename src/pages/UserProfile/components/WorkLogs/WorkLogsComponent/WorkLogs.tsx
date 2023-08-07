@@ -8,9 +8,12 @@ import { AddWorkTime, UpdateWorkTime } from "../../../../../constants/WorkLogs";
 import React from "react";
 import { WorkDayType, WorkTimesType } from "../../../../../types/WorkLog";
 import { useAppDispatch } from "../../../../../hook/useAppDispatch";
-// ({ day }:{day: WorkDayType}) => React.JSX.Element
-// FC<WorkDayType>
-const WorkLogsComponent:({ day }:{day: WorkDayType}) => React.JSX.Element  = ({day}) => {
+
+interface WorkLogProps{
+   day:WorkDayType
+}
+
+const WorkLogsComponent:FC<WorkLogProps> = ({day}) => {
    const dispatch = useAppDispatch();
    const [id, setId] = useState<number>(NaN);
    const [addOrRefreshTime, setAddOrRefreshTime] = useState<string>("Select the hours");

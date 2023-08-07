@@ -1,4 +1,4 @@
-import { AsyncThunk, createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk } from "@reduxjs/toolkit";
 import { postLoginEmail } from "../../../services/login";
 import { LoginEmailPostData } from "../../../types/LoginEmail";
 
