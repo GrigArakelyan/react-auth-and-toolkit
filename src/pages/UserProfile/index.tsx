@@ -1,16 +1,16 @@
 import GeneralInfo from "./components/GeneralInfo";
 import WorkLogs from "./components/WorkLogs/";
-import Loading from "../../Components/Loadind/Loading";
+import Loading from "../../Components/Loading/Loading";
 import { fetchMyProfile } from "../../store/slices/MyProfile/MyProfileThunk";
 import "./UserProfile.scss";
 import React, {FC, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { selectMyProfile } from "../../store/selectores/MyProfileSelector";
 import { useAppDispatch } from "../../hook/useAppDispatch";
+import { useAppSelector } from "../../hook/useAppSelector";
 
 const UserProfile:FC = () => {
   const dispatch = useAppDispatch();
-  const data = useSelector(selectMyProfile);
+  const data = useAppSelector(selectMyProfile);
 
   useEffect(() => {
     dispatch(fetchMyProfile())

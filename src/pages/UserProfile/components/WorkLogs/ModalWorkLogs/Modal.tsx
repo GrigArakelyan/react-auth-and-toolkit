@@ -8,7 +8,7 @@ import { addWorkTime, refreshWorkTime } from '../../../../../store/slices/WorkLo
 import TimePickerEnd from '../../../../../Components/TimePicker/TimePickerEnd';
 import TimePickerStart from '../../../../../Components/TimePicker/TimePickerStart';
 import { AddWorkTime } from "../../../../../constants/WorkLogs";
-import { Controller, useForm } from 'react-hook-form';
+import { Controller, FieldValues, useForm } from 'react-hook-form';
 import { useAppDispatch } from '../../../../../hook/useAppDispatch';
 
 
@@ -21,7 +21,7 @@ const ModalWorkLogs = ({openModal, handleOpen, dayId, setOpenModal, addOrRefresh
   id:number ;
 }) => {
   const dispatch = useAppDispatch();
-  const {handleSubmit, control } = useForm();
+  const {handleSubmit, control } = useForm<FieldValues>();
 
   const handleClose = () => {
     setOpenModal(false);

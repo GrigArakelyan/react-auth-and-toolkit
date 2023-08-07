@@ -2,7 +2,7 @@ import "./LoginCode.scss";
 import loginimg from "../../img/loginImg.png";
 import {ReactComponent as CloseLogo} from "../../img/icons/Close.svg"
 import {ReactComponent as ErrorLogo} from "../../img/icons/ErrorOutline.svg"
-import { useForm } from "react-hook-form";
+import { FieldValues, useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
 import React, { FC } from "react";
 import { fetchLoginCode } from "../../store/slices/loginCode/LoginCodeThunk";
@@ -18,7 +18,7 @@ import { IFormData } from "../../types/LoginEmail";
 
 const LoginCode:FC = () => {
   const {error, loading} = useAppSelector(selectCodeData);
-  const { register, handleSubmit, watch, formState: { errors }, reset } = useForm<IFormData>({
+  const { register, handleSubmit, watch, formState: { errors }, reset } = useForm<FieldValues>({
     mode: "onChange",
   });
 
