@@ -33,14 +33,8 @@ const UserPage:FC = () => {
       <Button className={"edit_profile_button"}
         text={"EDIT MY PROFILE AND MY WORKLOG"} type="button"
         onClick={myProfilePage}/>
-      {/* <button className="edit_profile_button" onClick={myProfilePage}>
-        EDIT MY PROFILE AND MY WORKLOG
-      </button> */}
       <Button className={"logout_button"} type="button" 
         text={"Lodout"} onClick={logout}/>
-      {/* <button className="logout_button" onClick={logout}>
-        Logout
-      </button> */}
     </div>
   );
 };
