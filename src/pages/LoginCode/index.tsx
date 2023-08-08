@@ -4,7 +4,7 @@ import {ReactComponent as CloseLogo} from "../../img/icons/Close.svg"
 import {ReactComponent as ErrorLogo} from "../../img/icons/ErrorOutline.svg"
 import { FieldValues, useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
-import React, { FC } from "react";
+import React, { FC, useEffect, useRef } from "react";
 import { fetchLoginCode } from "../../store/slices/loginCode/LoginCodeThunk";
 import { selectCodeData } from "../../store/selectores/CodeSelector";
 import { DASHBOARD } from "../../constants/router";
@@ -17,7 +17,7 @@ import Input from "../../Components/Input/Input";
 
 const LoginCode:FC = () => {
   const {error, loading} = useAppSelector(selectCodeData);
-  const { register, handleSubmit, watch, formState: { errors, isValid }, reset } = useForm<FieldValues>({
+  const { register, handleSubmit, watch, formState: { errors, isValid }, setFocus, reset, getValues } = useForm<FieldValues>({
     mode: "onChange",
   });
 
@@ -26,6 +26,20 @@ const LoginCode:FC = () => {
   const { state } = useLocation();
 
   const inputs: string[] = ["code1", "code2", "code3", "code4", "code5", "code6"];
+
+
+  
+  useEffect(() => {
+    setFocus(inputs[0]);
+  }, []);
+
+    let index = 0;
+    while(index < inputs.length){
+      if(watch(inputs[index])){
+        setFocus(inputs[index + 1]) 
+      }
+      index++;
+    }
 
   const postCode = (data: LoginCodeInputsChange):void => {
     const userLoginObj:LoginCodePostData = {
@@ -51,7 +65,7 @@ const LoginCode:FC = () => {
   const resetInputs = ():void => {
     reset();
   };
-
+  
   return (
       <div className="login_page_code">
         <div>
@@ -80,7 +94,8 @@ const LoginCode:FC = () => {
                 </span>
                 <div className="input_code_div">
                   {inputs.map((inputName) => (
-                    <Input key={inputName} className={error? "input_code_error": watch<any>(inputName) ? "input_code2": "input_code"}
+                    <Input key={inputName}
+                      className={error? "input_code_error": (watch<string>(inputName) ? "input_code2": "input_code")}
                       type="text"
                       onInput={formatNumberInput}
                       maxLength={1}

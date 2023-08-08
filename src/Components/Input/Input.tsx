@@ -1,4 +1,4 @@
-import React, { FormEventHandler, FC } from "react";
+import React, { FormEventHandler, FC, FocusEventHandler } from "react";
 import "./Input.scss"
 import { UseFormRegisterReturn } from "react-hook-form";
 
