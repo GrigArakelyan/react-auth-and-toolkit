@@ -1,4 +1,4 @@
-import * as React from 'react';
+import  React, {FC} from 'react';
 import { ReactComponent as CloseLogo } from "../../../../../img/icons/Close.svg"
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -11,15 +11,16 @@ import { AddWorkTime } from "../../../../../constants/WorkLogs";
 import { Controller, FieldValues, useForm } from 'react-hook-form';
 import { useAppDispatch } from '../../../../../hook/useAppDispatch';
 
-
-const ModalWorkLogs = ({openModal, handleOpen, dayId, setOpenModal, addOrRefreshTime, id}:{
-  openModal:boolean;
-  handleOpen:any;
-  dayId:number;
+interface ModalProps {
+  openModal: boolean;
+  handleOpen:() => void;
+  dayId: number;
   setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
-  addOrRefreshTime:string;
-  id:number ;
-}) => {
+  addOrRefreshTime: string;
+  id: number;
+}
+
+const ModalWorkLogs:FC<ModalProps> = ({openModal, handleOpen, dayId, setOpenModal, addOrRefreshTime, id}) => {
   const dispatch = useAppDispatch();
   const {handleSubmit, control } = useForm<FieldValues>();
 

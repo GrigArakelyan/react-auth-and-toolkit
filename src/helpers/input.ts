@@ -1,3 +1,4 @@
+import { ChangeEvent, FormEvent } from "react";
 import { onlyNumber } from "../utils/validation";
 
-export const formatNumberInput = (e: any):void => e.target.value = e.target.value.replace(onlyNumber, "")
+export const formatNumberInput = (e: ChangeEvent<HTMLInputElement>):string => e.target.value = e.target.value.replace(onlyNumber, "")

@@ -4,7 +4,7 @@ import Skeleton from '@mui/material/Skeleton';
 import "./Loading.scss"
 import { FC } from 'react';
 
-const LoadingComp:FC = () => {
+const Loading:FC = () => {
   return (
     <Box className="loading_div">
         <Skeleton />
@@ -14,4 +14,4 @@ const LoadingComp:FC = () => {
   );
 }
 
-export default LoadingComp
+export default Loading

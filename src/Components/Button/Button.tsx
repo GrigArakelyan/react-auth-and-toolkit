@@ -14,7 +14,6 @@ const Button:FC<IButton> = ({text, type, onClick, className, disabled}) => {
    return  <button className={className}
          type={type}
          onClick={onClick}
-         // onSubmit={onClick}
          disabled={disabled}
       >{text}</button>
 }

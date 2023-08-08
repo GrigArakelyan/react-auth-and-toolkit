@@ -17,7 +17,7 @@ import Input from "../../Components/Input/Input";
 
 const LoginCode:FC = () => {
   const {error, loading} = useAppSelector(selectCodeData);
-  const { register, handleSubmit, watch, formState: { errors }, reset } = useForm<FieldValues>({
+  const { register, handleSubmit, watch, formState: { errors, isValid }, reset } = useForm<FieldValues>({
     mode: "onChange",
   });
 
@@ -59,7 +59,7 @@ const LoginCode:FC = () => {
         </div>
         <div className="login_code-right">
           <div className="login_code">
-            <form className="login_code_item" onSubmit={handleSubmit((loading ? ()=>{} : postCode) as any)}>
+            <form className="login_code_item" onSubmit={handleSubmit((postCode) as any)}>
               <h2 className="h2_code">Login</h2>
                 {error && (
                   <div className="error">
@@ -82,14 +82,11 @@ const LoginCode:FC = () => {
                   {inputs.map((inputName) => (
                     <Input key={inputName} className={error? "input_code_error": watch<any>(inputName) ? "input_code2": "input_code"}
                       type="text"
-                      register={register(inputName, {
-                        required: 'Field is required',
-                     })}
-                      name={inputName}
-                      required
                       onInput={formatNumberInput}
                       maxLength={1}
-                      />
+                      register={register(inputName, {
+                        required: 'Field is required',
+                     })}/>
                     ))}
                   <CloseLogo className="clear_img_button"
                     onClick={resetInputs}
@@ -98,8 +95,8 @@ const LoginCode:FC = () => {
               </div>
               <Button className={"button"}
                 text={loading ? "Loading..." : "Submit"}
-                type="button"
-                onClick={handleSubmit((loading ? ()=>{} : postCode) as any)}
+                type="submit"
+                disabled={!isValid || loading}
               />
             </form>
           </div>

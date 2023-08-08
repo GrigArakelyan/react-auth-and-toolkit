@@ -10,7 +10,7 @@ import { useAppSelector } from "../../hook/useAppSelector";
 
 const UserProfile:FC = () => {
   const dispatch = useAppDispatch();
-  const data = useAppSelector(selectMyProfile);
+  const {loading} = useAppSelector(selectMyProfile);
 
   useEffect(() => {
     dispatch(fetchMyProfile())
@@ -23,7 +23,7 @@ const UserProfile:FC = () => {
   return (
     <div className="profile_page">
       <h1 className="h1_title">My Profile</h1>  
-        {data.loading? 
+        {loading? 
           <Loading /> : 
           <GeneralInfo />}
           <WorkLogs />

@@ -17,7 +17,7 @@ import Input from "../../Components/Input/Input";
 
 const LoginEmail:FC = () => {
   const { register, formState: { errors, isValid }, handleSubmit, reset,} = useForm<IFormData>({mode: 'onChange'});
-  const data:DataLoginEmail = useAppSelector(selectEmailData);
+  const {loading, error}:DataLoginEmail = useAppSelector(selectEmailData);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
     
@@ -46,10 +46,9 @@ const LoginEmail:FC = () => {
       </div>
       <div className="login_email">
         <form className="login_email_item"
-          // onSubmit={handleSubmit(!data.loading ? postEmail : () => {})}>
           onSubmit={handleSubmit(postEmail)}>
           <h2>Login</h2>
-          {data.error && (
+          {error && (
             <div className="error">
               <ErrorLogo className="error_logo"  />
               <p className="error_text">Write your e-mail adress</p>
@@ -71,15 +70,12 @@ const LoginEmail:FC = () => {
                   value: email,
                   message:"Fill in the field correctly"        
                 }
-              })}
-              validation={email}
-              message="Fill in the field correctly"    
+              })}   
               />
           </div>
           <Button className="button"
-            text={data.loading ? "Loading..." : "Send Code"}
-            disabled={!isValid || data.loading}
-            // onClick={handleSubmit(!data.loading ? postEmail : () => {})}
+            text={loading ? "Loading..." : "Send Code"}
+            disabled={!isValid || loading}
             type="submit"
             />
         </form>
