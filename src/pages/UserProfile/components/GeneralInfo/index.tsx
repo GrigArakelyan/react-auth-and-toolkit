@@ -55,18 +55,18 @@ const GeneralInfo:FC = () => {
         <div className="inputs_row">
           <div className="inputs_column">
             <span className="span_text">First name</span>
-            <Input type={"text"} className={errors.firstName ? "error" : "input_column_1"}
+            {/* <Input type={"text"} className={errors.firstName ? "error" : "input_column_1"}
               register={register}
               value={true}
               name={"firstName"}
-            />
+            /> */}
           </div>
           <div className="inputs_column">
             <span className="span_text">Last Name</span>
-            <Input type={"text"} className={errors.lastName ? "error" : "input_column_1"}
+            {/* <Input type={"text"} className={errors.lastName ? "error" : "input_column_1"}
               register={register}
               name={"lastName"} 
-              required={true}/>
+              required={true}/> */}
           </div>
           <div className="inputs_column">
             <span className="span_text">Date of birth</span>
@@ -85,18 +85,18 @@ const GeneralInfo:FC = () => {
         <div className="inputs_row">
           <div className="inputs_column_2">
             <span className="span_text">Email</span>
-            <Input type={"text"} className={"input_column_2"} placeholder={data?.email}
-            register={register} name={"email"}/>
+            {/* <Input type={"text"} className={"input_column_2"} placeholder={data?.email}
+            register={register} name={"email"}/> */}
           </div>
           <div className="inputs_column_2">
             <span className="span_text">Personal Email</span>
-            <Input type={"text"} className={errors.personalEmail ? "error" : "input_column_2"}
-              register={register} name={"personalEmail"} required={true} />
+            {/* <Input type={"text"} className={errors.personalEmail ? "error" : "input_column_2"}
+              register={register} name={"personalEmail"} required={true} /> */}
           </div>
-          <Input type={"text"} className={"input_column_phone"}
+          {/* <Input type={"text"} className={"input_column_phone"}
             placeholder={errors.mobilePhone ? "error" : "Mobile Phone"}
             onInput={formatNumberInput} required={true}
-            register={register} name={"mobilePhone"}/>
+            register={register} name={"mobilePhone"}/> */}
         </div>
         <div className="inputs_row">
           <div className="inputs_column">
@@ -112,13 +112,13 @@ const GeneralInfo:FC = () => {
           </div>
           <div className="input_column_absences">
             <span className="span_text">Absences</span>
-            <Input type={"text"} className={"input_column_1"}
+            {/* <Input type={"text"} className={"input_column_1"}
             onInput={formatNumberInput}
-            register={register} name={"absences"}/>
+            register={register} name={"absences"}/> */}
           </div>
           <div className="input_column_checkbox">
-            <Input type={"checkbox"} className={"input_checkbox"}
-            register={register} name={"isCoreTeamMember"}/>
+            {/* <Input type={"checkbox"} className={"input_checkbox"}
+            register={register} name={"isCoreTeamMember"}/> */}
             <span className="span_text">Core team member</span>
           </div>
           {isDirty && 
@@ -136,17 +136,17 @@ const GeneralInfo:FC = () => {
           <span className="account_span">Slack</span>
           <div className="input_icon">
             <img src={SlackIcon} className="icon" alt="img"/>
-            <Input className={errors.slackUserName ? "error_account" : "input_account"} type={"text"}
+            {/* <Input className={errors.slackUserName ? "error_account" : "input_account"} type={"text"}
             placeholder={"Enter you slack user name"} register={register} name={"slackUserName"}
-            required={true}/>
+            required={true}/> */}
           </div>
         </div>
         <div className="account">
           <span className="account_span">Github</span>
           <div className="input_icon">
             <img src={GitHubIcon} className="icon" alt="img"/>
-            <Input className={errors.gitHubUserName ? "error_account" : "input_account"} type={"text"}
-            placeholder={"Enter your github user name"} register={register} name={"gitHubUserName"}/>
+            {/* <Input className={errors.gitHubUserName ? "error_account" : "input_account"} type="text"
+            placeholder={"Enter your github user name"} register={register} name={"gitHubUserName"}/> */}
           </div>
         </div>
       </div>

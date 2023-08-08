@@ -16,12 +16,10 @@ import Input from "../../Components/Input/Input";
 
 
 const LoginEmail:FC = () => {
-  const { register, formState: { errors }, handleSubmit, reset,} = useForm<IFormData>({mode: 'onChange'});
+  const { register, formState: { errors, isValid }, handleSubmit, reset,} = useForm<IFormData>({mode: 'onChange'});
   const data:DataLoginEmail = useAppSelector(selectEmailData);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-
-  const inputName: string = "email";
     
   const postEmail = (data:LoginEmailPostData):void => {  
     data = {
@@ -48,7 +46,8 @@ const LoginEmail:FC = () => {
       </div>
       <div className="login_email">
         <form className="login_email_item"
-          onSubmit={handleSubmit(!data.loading ? postEmail : () => {})}>
+          // onSubmit={handleSubmit(!data.loading ? postEmail : () => {})}>
+          onSubmit={handleSubmit(postEmail)}>
           <h2>Login</h2>
           {data.error && (
             <div className="error">
@@ -65,18 +64,23 @@ const LoginEmail:FC = () => {
           <div className="input_span_email">
             <span className="span_email">Enter your email</span>
             <Input 
-              type={"text"}
-              className={"input"}
-              register={register}
-              name={inputName}
+              type="text"
+              className="input"
+              register={register("email", {
+                pattern: {
+                  value: email,
+                  message:"Fill in the field correctly"        
+                }
+              })}
               validation={email}
-              message={"Fill in the field correctly"}             
+              message="Fill in the field correctly"    
               />
           </div>
-          <Button className={"button"}
-            text={(data.loading && "Loading...") || "Send Code"}
-            onClick={handleSubmit(!data.loading ? postEmail : () => {})}
-            type={"button"}
+          <Button className="button"
+            text={data.loading ? "Loading..." : "Send Code"}
+            disabled={!isValid || data.loading}
+            // onClick={handleSubmit(!data.loading ? postEmail : () => {})}
+            type="submit"
             />
         </form>
       </div>

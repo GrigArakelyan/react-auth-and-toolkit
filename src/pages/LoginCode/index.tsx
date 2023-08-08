@@ -81,10 +81,12 @@ const LoginCode:FC = () => {
                 <div className="input_code_div">
                   {inputs.map((inputName) => (
                     <Input key={inputName} className={error? "input_code_error": watch<any>(inputName) ? "input_code2": "input_code"}
-                      type={"text"}
-                      register={register}
+                      type="text"
+                      register={register(inputName, {
+                        required: 'Field is required',
+                     })}
                       name={inputName}
-                      required = {true}
+                      required
                       onInput={formatNumberInput}
                       maxLength={1}
                       />

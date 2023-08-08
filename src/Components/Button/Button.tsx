@@ -5,15 +5,17 @@ interface IButton  {
    className: string
    text: string;
    type: "button" | "submit" | "reset" ;
-   onClick: () => void;
+   onClick?: () => void;
+   disabled?: boolean
 }
 
-const Button:FC<IButton> = ({text, type, onClick, className}) => {
+const Button:FC<IButton> = ({text, type, onClick, className, disabled}) => {
 
    return  <button className={className}
          type={type}
          onClick={onClick}
-         onSubmit={onClick}
+         // onSubmit={onClick}
+         disabled={disabled}
       >{text}</button>
 }
 export default Button
