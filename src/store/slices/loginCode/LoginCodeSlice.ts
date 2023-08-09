@@ -30,21 +30,3 @@ const LoginCodeReducer = createSlice({
 export default LoginCodeReducer.reducer;
 export const {removeTokenRed} = LoginCodeReducer.actions
 
-
-  // {
-  //   [fetchLoginCode.pending]: (state) => {
-      // state.loading = true;
-      // state.error = null;
-      // state.data = {}
-  //   },
-  //   [fetchLoginCode.fulfilled]: (state, action) => {
-      // state.data = action;
-      // state.loading = false;
-      // state.error = null;
-  //   },
-  //   [fetchLoginCode.rejected]: (state, action) => {
-      // state.error = action.payload;
-      // state.loading = false;
-      // state.data = {};
-  //   },
-  // },

@@ -21,8 +21,14 @@ export type WorkTimesType = {
   time: string
 };
 
-export type StateWorkLogs = {
-  data:WorkLogType;
+// export type StateWorkLogs = {
+//   data:WorkLogType;
+//   loading: boolean;
+//   error: string;
+// }
+
+export interface WorkLogsInitialState {
+  data: WorkLogType;
   loading: boolean;
   error: string;
 }

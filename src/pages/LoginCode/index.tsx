@@ -4,7 +4,7 @@ import {ReactComponent as CloseLogo} from "../../img/icons/Close.svg"
 import {ReactComponent as ErrorLogo} from "../../img/icons/ErrorOutline.svg"
 import { FieldValues, useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
-import React, { FC, useEffect, useRef } from "react";
+import React, { FC, useEffect } from "react";
 import { fetchLoginCode } from "../../store/slices/loginCode/LoginCodeThunk";
 import { selectCodeData } from "../../store/selectores/CodeSelector";
 import { DASHBOARD } from "../../constants/router";
@@ -17,7 +17,7 @@ import Input from "../../Components/Input/Input";
 
 const LoginCode:FC = () => {
   const {error, loading} = useAppSelector(selectCodeData);
-  const { register, handleSubmit, watch, formState: { errors, isValid }, setFocus, reset, getValues } = useForm<FieldValues>({
+  const { register, handleSubmit, watch, formState: { errors, isValid }, setFocus, reset } = useForm<FieldValues>({
     mode: "onChange",
   });
 

@@ -56,16 +56,12 @@ const GeneralInfo:FC = () => {
           <div className="inputs_column">
             <span className="span_text">First name</span>
             <Input type="text" className={errors.firstName ? "error" : "input_column_1"}
-              register={register("firstName", {
-                required: true
-              })}/>
+              register={register("firstName", { required: true })}/>
           </div>
           <div className="inputs_column">
             <span className="span_text">Last Name</span>
             <Input type="text" className={errors.lastName ? "error" : "input_column_1"}
-              register={register("lastName", {
-                required:true
-              })}/>
+              register={register("lastName", { required:true })}/>
           </div>
           <div className="inputs_column">
             <span className="span_text">Date of birth</span>
@@ -91,9 +87,7 @@ const GeneralInfo:FC = () => {
           <div className="inputs_column_2">
             <span className="span_text">Personal Email</span>
             <Input type="text" className={errors.personalEmail ? "error" : "input_column_2"}
-              register={register("personalEmail", {
-                required: true
-              })}/>
+              register={register("personalEmail", {required: true})}/>
           </div>
           <Input type="text" className="input_column_phone"
             placeholder={errors.mobilePhone ? "error" : "Mobile Phone"}
