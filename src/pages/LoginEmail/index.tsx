@@ -66,6 +66,7 @@ const LoginEmail:FC = () => {
               type="text"
               className="input"
               register={register("email", {
+                required: true,
                 pattern: {
                   value: email,
                   message:"Fill in the field correctly"        
